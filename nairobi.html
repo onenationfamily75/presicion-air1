@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Nairobi (NBO) Flights | Precision Air</title>
+<meta name="description" content="Fly to Nairobi, Kenya with Precision Air. Discover top attractions, flight schedules, and book your ticket online."/>
+<link rel="canonical" href="https://precisionairtez.site/destinations/nairobi"/>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--red:#c0392b;--red2:#e74c3c;--red-dark:#96281b;--navy:#0d1b2a;--navy2:#1a2e45;--navy3:#263d56;--gold:#f0a500;--gold2:#f7c948;--white:#fff;--off:#f8f9fb;--gray:#f1f3f6;--border:#e3e7ee;--mid:#6b7787;--text:#1a2332;--green:#27ae60;--serif:'Syne',sans-serif;--sans:'DM Sans',sans-serif}
+body{font-family:var(--sans);background:var(--white);color:var(--text);line-height:1.6;font-size:15px}
+a{text-decoration:none;color:inherit}
+img{display:block;max-width:100%}
+button{cursor:pointer;font-family:var(--sans)}
+.topbar{background:var(--navy);color:rgba(255,255,255,.75);font-size:.75rem;padding:.45rem 2rem;display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap}
+.topbar a{color:var(--gold2)}.topbar a:hover{color:#fff}
+header{background:var(--white);border-bottom:2px solid var(--border);position:sticky;top:0;z-index:400;box-shadow:0 2px 16px rgba(0,0,0,.07)}
+.hdr{max-width:1320px;margin:0 auto;padding:.9rem 2rem;display:flex;align-items:center;gap:2rem}
+.logo{display:flex;align-items:center;gap:.8rem;flex-shrink:0}
+.logo-mark{background:var(--red);color:#fff;font-family:var(--serif);font-size:1.1rem;font-weight:800;padding:.45rem .9rem;border-radius:6px;letter-spacing:.04em}
+.logo-text{font-family:var(--serif);font-size:1.35rem;font-weight:800;color:var(--navy);line-height:1.1}
+.logo-text span{display:block;font-size:.65rem;font-weight:500;color:var(--mid);letter-spacing:.1em;text-transform:uppercase;font-family:var(--sans)}
+.hdr-nav{display:flex;align-items:center;gap:.2rem;flex:1;justify-content:center;flex-wrap:wrap}
+.hn{padding:.55rem .9rem;font-size:.82rem;font-weight:500;color:#444;border-radius:6px;transition:.15s;white-space:nowrap}
+.hn:hover{background:var(--gray);color:var(--navy)}
+.hdr-ctas{display:flex;align-items:center;gap:.7rem;flex-shrink:0}
+.btn-book-hdr{padding:.55rem 1.2rem;background:var(--red);color:#fff;border-radius:7px;font-size:.82rem;font-weight:700;border:none;transition:.2s}
+.btn-book-hdr:hover{background:var(--red-dark)}
+.hero-sub{position:relative;min-height:380px;display:flex;align-items:flex-end;overflow:hidden;background:var(--navy)}
+.hero-sub-bg{position:absolute;inset:0;z-index:0}
+.hero-sub-bg img{width:100%;height:100%;object-fit:cover;opacity:.4}
+.hero-sub-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,27,42,.5) 0%,rgba(13,27,42,.9) 100%)}
+.hero-sub-inner{position:relative;z-index:2;max-width:1320px;margin:0 auto;padding:3rem 2rem;width:100%}
+.breadcrumb{display:flex;gap:.5rem;align-items:center;font-size:.75rem;color:rgba(255,255,255,.55);margin-bottom:1rem;flex-wrap:wrap}
+.breadcrumb a{color:var(--gold2)}.breadcrumb a:hover{color:#fff}
+.breadcrumb span{opacity:.5}
+.page-eyebrow{font-size:.68rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold2);margin-bottom:.6rem}
+.page-h1{font-family:var(--serif);font-size:2.8rem;font-weight:800;color:#fff;line-height:1.1;margin-bottom:.6rem}
+.page-sub{font-size:1rem;color:rgba(255,255,255,.72);max-width:560px;font-weight:300}
+.badge-row{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:1.2rem}
+.badge{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.88);padding:.35rem .85rem;border-radius:30px;font-size:.75rem;font-weight:500}
+.badge.red{background:var(--red);border-color:var(--red)}
+.section{padding:4.5rem 2rem}
+.section-alt{padding:4.5rem 2rem;background:var(--off)}
+.container{max-width:1320px;margin:0 auto}
+.sec-label{font-size:.68rem;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--red);margin-bottom:.4rem;display:flex;align-items:center;gap:.5rem}
+.sec-title{font-family:var(--serif);font-size:2rem;font-weight:800;color:var(--navy);line-height:1.2;margin-bottom:.5rem}
+.sec-sub{font-size:.9rem;color:var(--mid);max-width:600px;line-height:1.7;margin-bottom:2rem}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:start}
+.info-box{background:#fff;border:1.5px solid var(--border);border-radius:14px;padding:2rem}
+.info-row{display:flex;justify-content:space-between;padding:.6rem 0;border-bottom:1px dashed var(--border);font-size:.88rem}
+.info-row:last-child{border:none;font-weight:700}
+.info-row .lbl{color:var(--mid)}
+.info-row .val{color:var(--navy);font-weight:600}
+.flight-table{width:100%;border-collapse:collapse;font-size:.88rem}
+.flight-table th{background:var(--navy);color:#fff;padding:.75rem 1rem;text-align:left;font-size:.75rem;letter-spacing:.08em;text-transform:uppercase}
+.flight-table td{padding:.75rem 1rem;border-bottom:1px solid var(--border)}
+.flight-table tr:last-child td{border:none}
+.flight-table tr:hover td{background:var(--off)}
+.price-tag{font-family:var(--serif);font-size:1.3rem;font-weight:800;color:var(--red)}
+.btn-book{background:var(--red);color:#fff;border:none;padding:.6rem 1.3rem;border-radius:7px;font-size:.82rem;font-weight:700;transition:.2s}
+.btn-book:hover{background:var(--red-dark)}
+.hl-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:.9rem}
+.hl-item{background:#fff;border:1.5px solid var(--border);border-radius:10px;padding:1rem 1.2rem;display:flex;align-items:center;gap:.7rem;font-size:.85rem;font-weight:500;color:var(--navy)}
+.hl-icon{font-size:1.2rem;flex-shrink:0}
+.route-card-sm{background:#fff;border:1.5px solid var(--border);border-radius:12px;padding:1.3rem;display:flex;justify-content:space-between;align-items:center;gap:1rem;transition:.2s}
+.route-card-sm:hover{border-color:var(--red);box-shadow:0 6px 20px rgba(192,57,43,.1)}
+.rc-route-name{font-family:var(--serif);font-size:.95rem;font-weight:700;color:var(--navy)}
+.rc-meta{font-size:.75rem;color:var(--mid);margin-top:.2rem}
+.rc-price{font-family:var(--serif);font-size:1.2rem;font-weight:800;color:var(--red);text-align:right}
+.rc-dur{font-size:.72rem;color:var(--mid)}
+.related-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1rem}
+footer{background:var(--navy);color:#fff;padding:3rem 2rem 1.5rem}
+.ft-inner{max-width:1320px;margin:0 auto}
+.ft-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.1);font-size:.75rem;color:rgba(255,255,255,.45);flex-wrap:wrap;gap:.8rem;margin-top:1.5rem}
+.ft-bottom a{color:rgba(255,255,255,.45)}.ft-bottom a:hover{color:#fff}
+.wa-float{position:fixed;bottom:1.8rem;right:1.8rem;background:var(--wa,#25D366);color:#fff;width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.5rem;box-shadow:0 4px 16px rgba(37,211,102,.4);z-index:999;transition:.2s}
+.wa-float:hover{transform:scale(1.1)}
+@media(max-width:768px){.hdr-nav{display:none}.grid-2{grid-template-columns:1fr}.page-h1{font-size:2rem}}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <div>✉ <a href="mailto:contactcentre@precisionairtz.com">contactcentre@precisionairtz.com</a></div>
+  <div>💬 <a href="https://wa.me/254103761442" target="_blank">WhatsApp: +254 103 761 442</a></div>
+</div>
+<header>
+  <div class="hdr">
+    <a href="/" class="logo">
+      <div class="logo-mark">PW</div>
+      <div class="logo-text">Precision Air<span>Tanzania's Leading Airline</span></div>
+    </a>
+    <nav class="hdr-nav">
+      <a class="hn" href="/">Book</a>
+      <a class="hn" href="/#routes">Routes</a>
+      <a class="hn" href="/#destinations">Destinations</a>
+      <a class="hn" href="/">Manage Booking</a>
+      <a class="hn" href="/">Check-in</a>
+    </nav>
+    <div class="hdr-ctas">
+      <a href="/" class="btn-book-hdr">Book Now</a>
+    </div>
+  </div>
+</header>
+
+<section class="hero-sub">
+  <div class="hero-sub-bg" style="background:linear-gradient(135deg,#212529,#495057)"><img src="https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?w=1200&q=80&auto=format&fit=crop" alt="Nairobi" onerror="this.style.opacity='0'"/></div>
+  <div class="hero-sub-inner">
+    <div class="breadcrumb">
+      <a href="/">Home</a><span>/</span>
+      <a href="/#destinations">Destinations</a><span>/</span>
+      <span>Nairobi</span>
+    </div>
+    <div class="page-eyebrow">International Destination · Kenya</div>
+    <h1 class="page-h1">Nairobi</h1>
+    <p class="page-sub">East Africa's most cosmopolitan city is a major business and transit hub. Nairobi offers world-class restaurants, Nairobi National Park right on the city's edge, and easy connections across the continent.</p>
+    <div class="badge-row">
+      <span class="badge red">NBO</span>
+      <span class="badge">Kenya</span>
+      <span class="badge">International</span>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="sec-label">Top Attractions</div>
+    <div class="sec-title">Highlights</div>
+    <div class="hl-grid" style="margin-bottom:3rem"><div class="hl-item"><span class="hl-icon">📍</span>Nairobi National Park</div><div class="hl-item"><span class="hl-icon">📍</span>Giraffe Centre</div><div class="hl-item"><span class="hl-icon">📍</span>Karen Blixen Museum</div><div class="hl-item"><span class="hl-icon">📍</span>Kibera</div><div class="hl-item"><span class="hl-icon">📍</span>Westgate & upscale dining</div></div>
+
+    <div class="sec-label">Flights</div>
+    <div class="sec-title">Routes to & from Nairobi</div>
+    <p class="sec-sub">Book direct flights operated by Precision Air.</p>
+    <div class="related-grid">
+        <a href="/flights/DAR-NBO.html" class="route-card-sm" onclick='openModalByCode("DAR-NBO");return false;' style="display:flex;text-decoration:none">
+          <div>
+            <div class="rc-route-name">Dar es Salaam → Nairobi</div>
+            <div class="rc-meta">1h 30min · 3 daily flights · International</div>
+          </div>
+          <div>
+            <div class="rc-price">USD 199</div>
+            <div class="rc-dur">Economy</div>
+          </div>
+        </a>
+        <a href="/flights/NBO-DAR.html" class="route-card-sm" onclick='openModalByCode("NBO-DAR");return false;' style="display:flex;text-decoration:none">
+          <div>
+            <div class="rc-route-name">Nairobi → Dar es Salaam</div>
+            <div class="rc-meta">1h 30min · 3 daily flights · International</div>
+          </div>
+          <div>
+            <div class="rc-price">USD 199</div>
+            <div class="rc-dur">Economy</div>
+          </div>
+        </a>
+        <a href="/flights/ZNZ-NBO.html" class="route-card-sm" onclick='openModalByCode("ZNZ-NBO");return false;' style="display:flex;text-decoration:none">
+          <div>
+            <div class="rc-route-name">Zanzibar → Nairobi</div>
+            <div class="rc-meta">1h 20min · 2 daily flights · International</div>
+          </div>
+          <div>
+            <div class="rc-price">USD 189</div>
+            <div class="rc-dur">Economy</div>
+          </div>
+        </a>
+        <a href="/flights/ARK-NBO.html" class="route-card-sm" onclick='openModalByCode("ARK-NBO");return false;' style="display:flex;text-decoration:none">
+          <div>
+            <div class="rc-route-name">Arusha → Nairobi</div>
+            <div class="rc-meta">45 min · 2 daily flights · International</div>
+          </div>
+          <div>
+            <div class="rc-price">USD 169</div>
+            <div class="rc-dur">Economy</div>
+          </div>
+        </a></div>
+  </div>
+</section>
+
+<footer>
+  <div class="ft-inner">
+    <div class="ft-bottom">
+      <span>© 2025 Precision Air Services PLC. All rights reserved. DSE: PAL</span>
+      <div style="display:flex;gap:1.2rem">
+        <a href="#">Privacy</a><a href="#">Terms</a><a href="#">Cookies</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<a href="https://wa.me/254103761442" target="_blank" class="wa-float" title="WhatsApp Us">💬</a>
+
+<style>
+/* ── BOOKING MODAL OVERLAY ── */
+.modal-bg{display:none;position:fixed;inset:0;background:rgba(10,20,35,.72);z-index:900;justify-content:center;align-items:flex-start;padding:1.5rem;overflow-y:auto;backdrop-filter:blur(4px)}
+.modal-bg.open{display:flex}
+.modal{background:#fff;border-radius:18px;width:100%;max-width:860px;box-shadow:0 30px 80px rgba(0,0,0,.3);overflow:hidden;animation:slideUp .35s ease}
+@keyframes slideUp{from{transform:translateY(40px);opacity:0}to{transform:translateY(0);opacity:1}}
+
+/* Modal steps */
+.m-head{background:linear-gradient(135deg,var(--navy),var(--navy2));color:#fff;padding:1.6rem 2rem;display:flex;justify-content:space-between;align-items:flex-start}
+.m-head-left h2{font-family:var(--serif);font-size:1.3rem;font-weight:800;margin-bottom:.15rem}
+.m-head-left p{font-size:.8rem;opacity:.7}
+.m-close{background:rgba(255,255,255,.12);border:none;color:#fff;width:34px;height:34px;border-radius:50%;font-size:1.2rem;display:flex;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0;transition:.2s}
+.m-close:hover{background:rgba(255,255,255,.25)}
+.m-steps{display:flex;background:var(--gray);border-bottom:1.5px solid var(--border)}
+.m-step{flex:1;padding:.9rem .5rem;text-align:center;font-size:.75rem;font-weight:600;color:var(--mid);border-bottom:2.5px solid transparent;transition:.2s;cursor:default}
+.m-step.active{color:var(--red);border-bottom-color:var(--red)}
+.m-step.done{color:var(--green)}
+.m-step span{display:block;font-size:.68rem;font-weight:400;margin-top:.1rem;opacity:.7}
+.m-body{padding:2rem}
+.step-section{display:none}
+.step-section.show{display:block}
+
+/* Step 1 — Flight summary */
+.flight-summary{background:var(--off);border-radius:10px;padding:1.2rem;margin-bottom:1.5rem;border:1px solid var(--border)}
+.fs-route{display:flex;align-items:center;gap:1rem;margin-bottom:.8rem;flex-wrap:wrap}
+.fs-city{font-family:var(--serif);font-size:1.1rem;font-weight:700;color:var(--navy)}
+.fs-arrow{color:var(--red);font-size:1.2rem}
+.fs-details{display:grid;grid-template-columns:repeat(4,1fr);gap:.8rem}
+.fs-item label{font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:var(--mid);font-weight:700;display:block;margin-bottom:.15rem}
+.fs-item span{font-size:.88rem;font-weight:600;color:var(--navy)}
+.fs-price-row{display:flex;justify-content:space-between;align-items:center;margin-top:1rem;padding-top:.8rem;border-top:1px dashed var(--border)}
+.fs-total-label{font-size:.8rem;color:var(--mid)}
+.fs-total-usd{font-family:var(--serif);font-size:1.6rem;font-weight:800;color:var(--red)}
+.fs-total-tzs{font-size:.78rem;color:var(--mid);margin-top:.1rem}
+
+/* Seat map */
+.seat-legend{display:flex;gap:1.2rem;flex-wrap:wrap;margin-bottom:1rem;font-size:.75rem;color:var(--mid)}
+.sl-item{display:flex;align-items:center;gap:.4rem}
+.sl-box{width:16px;height:16px;border-radius:3px;border:1.5px solid}
+.sl-box.avail{background:#fff;border-color:var(--navy)}
+.sl-box.sel{background:var(--red);border-color:var(--red)}
+.sl-box.occ{background:#d0d5dd;border-color:#bbb}
+.sl-box.biz{background:var(--gold2);border-color:var(--gold)}
+.seat-plane{background:var(--off);border-radius:12px;padding:1.4rem;margin-bottom:1rem;overflow-x:auto}
+.plane-nose{text-align:center;font-size:1.6rem;margin-bottom:.5rem;opacity:.5}
+.plane-label{display:flex;justify-content:flex-end;font-size:.65rem;color:var(--mid);margin-bottom:.5rem;padding-right:.5rem;letter-spacing:.05em}
+.seat-rows{display:flex;flex-direction:column;gap:.4rem}
+.seat-row{display:flex;align-items:center;gap:.35rem;justify-content:center}
+.row-num{width:22px;font-size:.68rem;color:var(--mid);text-align:right;flex-shrink:0}
+.aisle{width:20px;flex-shrink:0}
+.seat{width:36px;height:36px;border-radius:6px 6px 4px 4px;border:1.5px solid var(--navy);background:#fff;color:var(--navy);font-size:.68rem;font-weight:700;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:.15s;flex-shrink:0;user-select:none}
+.seat.biz{border-color:var(--gold);background:#fffbea;color:var(--navy);width:40px;height:40px}
+.seat:hover:not(.occ){transform:scale(1.12);box-shadow:0 2px 8px rgba(192,57,43,.25)}
+.seat.sel{background:var(--red);border-color:var(--red);color:#fff}
+.seat.occ{background:#e9ecef;border-color:#ccc;color:#aaa;cursor:not-allowed}
+.seat-note{font-size:.75rem;color:var(--mid);text-align:center;margin-top:.5rem}
+
+/* Passenger form */
+.pax-section{margin-bottom:1.5rem}
+.pax-title{font-family:var(--serif);font-size:1rem;font-weight:700;color:var(--navy);border-bottom:1.5px solid var(--border);padding-bottom:.6rem;margin-bottom:1rem;display:flex;align-items:center;gap:.5rem}
+.pax-num{background:var(--red);color:#fff;width:22px;height:22px;border-radius:50%;font-size:.72rem;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:.9rem}
+.form-grid.three{grid-template-columns:1fr 1fr 1fr}
+.fg{display:flex;flex-direction:column;gap:.28rem}
+.fg label{font-size:.72rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--mid)}
+.fg input,.fg select{padding:.68rem .9rem;border:1.5px solid var(--border);border-radius:8px;font-size:.88rem;color:var(--text);background:#fff;outline:none;transition:.2s}
+.fg input:focus,.fg select:focus{border-color:var(--red);box-shadow:0 0 0 3px rgba(192,57,43,.1)}
+
+/* Review */
+.review-block{background:var(--off);border-radius:10px;padding:1.3rem;border:1px solid var(--border);margin-bottom:1rem}
+.rb-title{font-size:.75rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--mid);margin-bottom:.9rem}
+.rb-row{display:flex;justify-content:space-between;padding:.3rem 0;font-size:.85rem;border-bottom:1px dashed #e3e7ee}
+.rb-row:last-child{border:none;font-weight:700;font-size:.95rem;padding-top:.6rem;margin-top:.2rem}
+.rb-row .val{color:var(--navy);font-weight:600}
+.rb-row.total .val{color:var(--red);font-size:1.1rem;font-weight:800}
+.rb-row.total{border-top:2px dashed var(--red);margin-top:.5rem;padding-top:.7rem}
+
+.btn-wa-confirm{width:100%;background:var(--wa);color:#fff;border:none;padding:1rem;border-radius:10px;font-size:1rem;font-weight:800;font-family:var(--serif);letter-spacing:.02em;transition:.2s;box-shadow:0 4px 16px rgba(37,211,102,.35);display:flex;align-items:center;justify-content:center;gap:.7rem}
+.btn-wa-confirm:hover{background:#1ebe5d;transform:translateY(-2px)}
+.terms-note{font-size:.72rem;color:var(--mid);text-align:center;margin-top:.7rem;line-height:1.5}
+
+.m-footer{display:flex;justify-content:space-between;gap:.8rem;padding:1rem 2rem;border-top:1.5px solid var(--border);background:var(--off)}
+.btn-prev,.btn-next{padding:.75rem 1.6rem;border-radius:8px;font-size:.88rem;font-weight:700;border:none;transition:.2s;font-family:var(--serif)}
+.btn-prev{background:#fff;color:var(--navy);border:1.5px solid var(--border)}
+.btn-prev:hover{border-color:var(--navy)}
+.btn-next{background:var(--red);color:#fff}
+.btn-next:hover{background:var(--red-dark)}
+.btn-next:disabled{background:#ccc;cursor:not-allowed}
+
+
+/* ── TOAST ── */
+.toast{position:fixed;bottom:2rem;left:50%;transform:translateX(-50%) translateY(60px);background:var(--navy);color:#fff;padding:.7rem 1.5rem;border-radius:30px;font-size:.85rem;font-weight:500;z-index:9999;transition:.35s;opacity:0;pointer-events:none;white-space:nowrap}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+
+/* Booking btn fix */
+.btn-book-page{background:var(--red);color:#fff;border:none;padding:.6rem 1.3rem;border-radius:7px;font-size:.82rem;font-weight:700;transition:.2s;cursor:pointer;font-family:var(--sans)}
+.btn-book-page:hover{background:#96281b}
+</style>
+
+<!-- ═══════════════ BOOKING MODAL ═══════════════ -->
+<div class="modal-bg" id="modalBg" onclick="handleBgClick(event)">
+  <div class="modal">
+    <div class="m-head">
+      <div class="m-head-left">
+        <h2 id="mTitle">Book Your Flight</h2>
+        <p id="mSub">Complete the steps below to confirm your booking</p>
+      </div>
+      <button class="m-close" onclick="closeModal()">×</button>
+    </div>
+    <div class="m-steps">
+      <div class="m-step active" id="mStep1">1. Flight<span>Select seat class</span></div>
+      <div class="m-step" id="mStep2">2. Seats<span>Choose your seat</span></div>
+      <div class="m-step" id="mStep3">3. Passengers<span>Your details</span></div>
+      <div class="m-step" id="mStep4">4. Confirm<span>Review &amp; pay</span></div>
+    </div>
+
+    <!-- ── STEP 1: Flight & Class ── -->
+    <div class="m-body">
+      <div class="step-section show" id="step1">
+        <div class="flight-summary" id="mFlightSummary"></div>
+        <div style="margin-bottom:1rem">
+          <div style="font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--mid);margin-bottom:.8rem">Select Fare Class</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:.9rem" id="classCards"></div>
+        </div>
+        <div style="font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--mid);margin-bottom:.6rem">Included in Your Fare</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:.5rem;font-size:.8rem;color:#444">
+          <div>✓ 23kg checked baggage</div>
+          <div>✓ 7kg cabin bag</div>
+          <div>✓ Meals on selected routes</div>
+          <div>✓ PAA Royal miles earned</div>
+        </div>
+      </div>
+
+      <!-- ── STEP 2: Seat Selection ── -->
+      <div class="step-section" id="step2">
+        <div class="seat-legend">
+          <div class="sl-item"><div class="sl-box biz"></div>Business</div>
+          <div class="sl-item"><div class="sl-box avail"></div>Available</div>
+          <div class="sl-item"><div class="sl-box sel"></div>Selected</div>
+          <div class="sl-item"><div class="sl-box occ"></div>Occupied</div>
+        </div>
+        <div class="seat-plane">
+          <div class="plane-nose">✈</div>
+          <div class="plane-label">A &nbsp; B &nbsp;&nbsp;&nbsp; C &nbsp; D</div>
+          <div class="seat-rows" id="seatMap"></div>
+        </div>
+        <div class="seat-note" id="seatNote">Please select <strong id="seatsNeeded">1</strong> seat(s). Selected: <strong id="seatsSelected">0</strong></div>
+      </div>
+
+      <!-- ── STEP 3: Passenger Details ── -->
+      <div class="step-section" id="step3">
+        <div id="passengerForms"></div>
+        <div class="fg" style="margin-top:.5rem">
+          <label>Contact Phone / WhatsApp</label>
+          <input type="tel" id="paxPhone" placeholder="+254 7XX XXX XXX"/>
+        </div>
+        <div class="fg" style="margin-top:.8rem">
+          <label>Email Address</label>
+          <input type="email" id="paxEmail" placeholder="your@email.com"/>
+        </div>
+      </div>
+
+      <!-- ── STEP 4: Review & Confirm ── -->
+      <div class="step-section" id="step4">
+        <div class="review-block" id="reviewBlock"></div>
+        <button class="btn-wa-confirm" onclick="confirmBooking()">
+          💬 Confirm &amp; Send via WhatsApp
+        </button>
+        <p class="terms-note">By confirming you agree to Precision Air's Terms &amp; Conditions. Your booking details will be sent to our team on WhatsApp +254 103 761 442 for instant confirmation. Prices include all taxes and fees.</p>
+      </div>
+    </div>
+
+    <div class="m-footer">
+      <button class="btn-prev" id="prevBtn" onclick="prevStep()" style="display:none">← Back</button>
+      <div style="flex:1"></div>
+      <button class="btn-next" id="nextBtn" onclick="nextStep()">Continue →</button>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<script>
+// ─── CONSTANTS ───
+const TZS_RATE = 2590; // TZS per 1 USD
+const WA = '254103761442';
+
+// ─── ROUTES DATA (with real market prices) ───
+const ROUTES = [
+  // DOMESTIC
+  {from:'DAR',fromName:'Dar es Salaam',to:'ZNZ',toName:'Zanzibar',code:'DAR-ZNZ',duration:'20 min',type:'Domestic',eco:89,biz:189,dep:['06:00','08:30','10:00','13:00','15:30','17:00'],img:'https://images.unsplash.com/photo-1586348943529-beaae6c28db9?w=700&q=85&auto=format&fit=crop'},
+  {from:'ZNZ',fromName:'Zanzibar',to:'DAR',toName:'Dar es Salaam',code:'ZNZ-DAR',duration:'20 min',type:'Domestic',eco:89,biz:189,dep:['07:00','09:30','11:00','14:00','16:30','18:00'],img:'https://images.unsplash.com/photo-1540979388789-6cee28a1cdc9?w=700&q=85&auto=format&fit=crop'},
+  {from:'DAR',fromName:'Dar es Salaam',to:'JRO',toName:'Kilimanjaro',code:'DAR-JRO',duration:'55 min',type:'Domestic',eco:139,biz:269,dep:['06:30','09:00','13:30','16:00'],img:'https://images.unsplash.com/photo-1521150932951-303a95503ed3?w=700&q=85&auto=format&fit=crop'},
+  {from:'JRO',fromName:'Kilimanjaro',to:'DAR',toName:'Dar es Salaam',code:'JRO-DAR',duration:'55 min',type:'Domestic',eco:139,biz:269,dep:['08:00','11:00','15:00','17:30'],img:'https://images.unsplash.com/photo-1516426122078-c23e76319801?w=700&q=85&auto=format&fit=crop'},
+  {from:'DAR',fromName:'Dar es Salaam',to:'ARK',toName:'Arusha',code:'DAR-ARK',duration:'50 min',type:'Domestic',eco:129,biz:249,dep:['07:00','10:30','14:00','16:30'],img:'https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=700&q=85&auto=format&fit=crop'},
+  {from:'DAR',fromName:'Dar es Salaam',to:'MWZ',toName:'Mwanza',code:'DAR-MWZ',duration:'1h 10min',type:'Domestic',eco:149,biz:289,dep:['07:30','12:00','15:30'],img:'https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?w=700&q=85&auto=format&fit=crop'},
+  {from:'MWZ',fromName:'Mwanza',to:'DAR',toName:'Dar es Salaam',code:'MWZ-DAR',duration:'1h 10min',type:'Domestic',eco:149,biz:289,dep:['09:30','14:00','17:30'],img:'https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=700&q=85&auto=format&fit=crop'},
+  {from:'DAR',fromName:'Dar es Salaam',to:'MYW',toName:'Mtwara',code:'DAR-MYW',duration:'1h 05min',type:'Domestic',eco:119,biz:229,dep:['08:00','13:00'],img:'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=700&q=85&auto=format&fit=crop'},
+  {from:'DAR',fromName:'Dar es Salaam',to:'DOD',toName:'Dodoma',code:'DAR-DOD',duration:'45 min',type:'Domestic',eco:99,biz:199,dep:['07:30','12:30','16:00'],img:'https://images.unsplash.com/photo-1501854140801-50d01698950b?w=700&q=85&auto=format&fit=crop'},
+  {from:'DAR',fromName:'Dar es Salaam',to:'BKZ',toName:'Bukoba',code:'DAR-BKZ',duration:'1h 30min',type:'Domestic',eco:159,biz:299,dep:['07:00','13:00'],img:'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=700&q=85&auto=format&fit=crop'},
+  {from:'ZNZ',fromName:'Zanzibar',to:'JRO',toName:'Kilimanjaro',code:'ZNZ-JRO',duration:'1h 10min',type:'Domestic',eco:149,biz:279,dep:['08:00','13:00'],img:'https://images.unsplash.com/photo-1575550959106-5a7defe28b56?w=700&q=85&auto=format&fit=crop'},
+  {from:'JRO',fromName:'Kilimanjaro',to:'ZNZ',toName:'Zanzibar',code:'JRO-ZNZ',duration:'1h 10min',type:'Domestic',eco:149,biz:279,dep:['10:00','15:00'],img:'https://images.unsplash.com/photo-1559128010-7c1ad6e1b6a5?w=700&q=85&auto=format&fit=crop'},
+  // INTERNATIONAL
+  {from:'DAR',fromName:'Dar es Salaam',to:'NBO',toName:'Nairobi',code:'DAR-NBO',duration:'1h 30min',type:'International',eco:199,biz:389,dep:['07:00','11:30','15:00'],img:'https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?w=700&q=85&auto=format&fit=crop'},
+  {from:'NBO',fromName:'Nairobi',to:'DAR',toName:'Dar es Salaam',code:'NBO-DAR',duration:'1h 30min',type:'International',eco:199,biz:389,dep:['09:00','13:30','17:00'],img:'https://images.unsplash.com/photo-1516426122078-c23e76319801?w=700&q=85&auto=format&fit=crop'},
+  {from:'DAR',fromName:'Dar es Salaam',to:'EBB',toName:'Entebbe',code:'DAR-EBB',duration:'2h 00min',type:'International',eco:229,biz:429,dep:['08:00','14:00'],img:'https://images.unsplash.com/photo-1521150932951-303a95503ed3?w=700&q=85&auto=format&fit=crop'},
+  {from:'ZNZ',fromName:'Zanzibar',to:'NBO',toName:'Nairobi',code:'ZNZ-NBO',duration:'1h 20min',type:'International',eco:189,biz:369,dep:['09:00','14:00'],img:'https://images.unsplash.com/photo-1521150932951-303a95503ed3?w=700&q=85&auto=format&fit=crop'},
+  {from:'ARK',fromName:'Arusha',to:'NBO',toName:'Nairobi',code:'ARK-NBO',duration:'45 min',type:'International',eco:169,biz:319,dep:['07:30','12:30'],img:'https://images.unsplash.com/photo-1535941339077-2dd1c7963098?w=700&q=85&auto=format&fit=crop'},
+  {from:'MWZ',fromName:'Mwanza',to:'ARK',toName:'Arusha',code:'MWZ-ARK',duration:'1h 00min',type:'Domestic',eco:139,biz:259,dep:['09:00','14:00'],img:'https://images.unsplash.com/photo-1516426122078-c23e76319801?w=700&q=85&auto=format&fit=crop'},
+];
+
+// occupied seats (random)
+const OCCUPIED = [3,7,11,15,18,22,26,30,33,37,42,47];
+
+// ─── STATE ───
+let tripType = 'ow';
+let paxCount = 1;
+let currentRoute = null;
+let selectedClass = 'eco';
+let selectedSeats = [];
+let passengers = [];
+let currentStep = 1;
+
+// ─── FORMAT ───
+const fmt = (usd) => `USD ${usd.toFixed(0)}`;
+const fmtTZS = (usd) => `TZS ${(usd * TZS_RATE).toLocaleString()}`;
+
+// ─── TRIP TOGGLE ───
+function setTrip(t){
+  tripType = t;
+  document.getElementById('owBtn').classList.toggle('active', t==='ow');
+  document.getElementById('rtBtn').classList.toggle('active', t==='rt');
+  document.getElementById('retDateWrap').style.display = t==='rt' ? 'flex' : 'none';
+  if(t==='rt') document.getElementById('dateRow').style.gridTemplateColumns='1fr 1fr';
+  else document.getElementById('dateRow').style.gridTemplateColumns='1fr 1fr';
+}
+
+function changePax(d){
+  paxCount = Math.max(1, Math.min(9, paxCount + d));
+  document.getElementById('paxCount').textContent = paxCount;
+}
+
+// ─── SEARCH ───
+// Airport name lookup
+const AIRPORT_NAMES = {
+  DAR:'Dar es Salaam', ZNZ:'Zanzibar', JRO:'Kilimanjaro',
+  ARK:'Arusha', MWZ:'Mwanza', MYW:'Mtwara', DOD:'Dodoma',
+  BKZ:'Bukoba', NBO:'Nairobi', EBB:'Entebbe'
+};
+
+// Default departure times and base prices when no exact route exists
+const DEF_DEPS = ['06:30','08:00','10:30','13:00','15:30','17:00'];
+const DEF_PRICES = {
+  domestic:{eco:119,biz:229,dur:'1h 00min'},
+  regional:{eco:179,biz:339,dur:'1h 30min'},
+  international:{eco:219,biz:409,dur:'2h 00min'}
+};
+
+function getRouteType(from, to){
+  const intl = ['NBO','EBB'];
+  if(intl.includes(from)||intl.includes(to)) return 'international';
+  return 'domestic';
+}
+
+function buildFlightCard(r, t){
+  const flightNum = `PW ${(parseInt(r.from.charCodeAt(0)) + parseInt(r.to.charCodeAt(0)) + DEF_DEPS.indexOf(t||r.dep[0])*10 + 100) % 900 + 100}`;
+  return `
+    <div class="flight-card">
+      <div class="fl-airline">
+        <div>
+          <div class="fl-logo">PW</div>
+          <div class="fl-name" style="margin-top:.3rem">Precision Air</div>
+          <div class="fl-cls">${flightNum}</div>
+        </div>
+      </div>
+      <div class="fl-route">
+        <div class="fl-city">
+          <div class="fl-time">${t}</div>
+          <div class="fl-code">${r.from}</div>
+        </div>
+        <div class="fl-arrow">
+          <div class="fl-line"></div>
+          <div class="fl-dur">${r.duration}</div>
+          <div class="fl-stops">Direct</div>
+        </div>
+        <div class="fl-city">
+          <div class="fl-time">${addDur(t, r.duration)}</div>
+          <div class="fl-code">${r.to}</div>
+        </div>
+      </div>
+      <div class="fl-price-block">
+        <div class="fl-price-usd">${fmt(r.eco * paxCount)}</div>
+        <div class="fl-price-tzs">${fmtTZS(r.eco * paxCount)}</div>
+        <div class="fl-taxes">Economy · incl. taxes · ${paxCount} pax</div>
+        <button class="btn-select-fl" onclick='openModal(${JSON.stringify(r)})'>Select →</button>
+      </div>
+    </div>`;
+}
+
+function searchFlights(){
+  const from = document.getElementById('sFrom').value;
+  const to   = document.getElementById('sTo').value;
+  const dep  = document.getElementById('sDep').value;
+  if(!from||!to){ showToast('Please select origin and destination.'); return; }
+  if(from===to){ showToast('Origin and destination cannot be the same.'); return; }
+  if(!dep){ showToast('Please select a departure date.'); return; }
+
+  const res  = document.getElementById('flightResults');
+  const list = document.getElementById('flightList');
+  const depDate = new Date(dep).toLocaleDateString('en-GB',{weekday:'short',day:'numeric',month:'short',year:'numeric'});
+
+  // Try exact route match first
+  let matches = ROUTES.filter(r => r.from===from && r.to===to);
+
+  // If no exact match, generate flights dynamically so all routes are always available
+  if(!matches.length){
+    const rType = getRouteType(from, to);
+    const defaults = DEF_PRICES[rType];
+    const synth = {
+      from, to,
+      fromName: AIRPORT_NAMES[from]||from,
+      toName:   AIRPORT_NAMES[to]||to,
+      code: `${from}-${to}`,
+      duration: defaults.dur,
+      type: rType==='international'?'International':'Domestic',
+      eco:  defaults.eco,
+      biz:  defaults.biz,
+      dep:  DEF_DEPS,
+      img:  'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=700&q=80'
+    };
+    matches = [synth];
+  }
+
+  list.innerHTML = matches.flatMap(r =>
+    r.dep.map(t => buildFlightCard(r, t))
+  ).join('');
+
+  document.getElementById('rrTitle').textContent =
+    `${AIRPORT_NAMES[from]||from} → ${AIRPORT_NAMES[to]||to}`;
+  document.getElementById('rrSub').textContent =
+    `${depDate} · ${paxCount} passenger(s) · ${tripType==='rt'?'Round Trip':'One Way'}`;
+  res.classList.add('show');
+  res.scrollIntoView({behavior:'smooth', block:'start'});
+}
+
+function addDur(time, dur){
+  const [h,m] = time.split(':').map(Number);
+  const mins = parseInt(dur)*60 + (dur.includes('h ')?parseInt(dur.split('h ')[1]):0);
+  const total = h*60 + m + mins;
+  return `${String(Math.floor(total/60)%24).padStart(2,'0')}:${String(total%60).padStart(2,'0')}`;
+}
+
+// ─── RENDER ROUTE CARDS ───
+function renderRoutes(){
+  const grid = document.getElementById('routesGrid');
+  grid.innerHTML = ROUTES.map(r => `
+    <div class="route-card">
+      <div class="rc-img">
+        <img src="${r.img}" alt="${r.toName}" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=700&q=85&auto=format&fit=crop'" loading="lazy"/>
+        <span class="rc-type">${r.type}</span>
+        <span class="rc-dur">⏱ ${r.duration}</span>
+      </div>
+      <div class="rc-body">
+        <div class="rc-route">
+          <div class="rc-from">${r.fromName}</div>
+          <div class="rc-arrow">→</div>
+          <div class="rc-to">${r.toName}</div>
+        </div>
+        <div class="rc-airports">${r.from} → ${r.to} · ${r.dep.length} daily flights</div>
+        <div class="rc-price-row">
+          <div>
+            <div class="rc-price-label">From</div>
+            <div class="rc-usd">${fmt(r.eco)}</div>
+            <div class="rc-tzs">${fmtTZS(r.eco)}</div>
+          </div>
+          <button class="btn-book-rc" onclick='openModal(${JSON.stringify(r)})'>Book Now →</button>
+        </div>
+      </div>
+    </div>`).join('');
+}
+
+// ─── SEAT MAP ───
+function buildSeatMap(){
+  const map = document.getElementById('seatMap');
+  map.innerHTML = '';
+  selectedSeats = [];
+  // 3 rows Business (1-3) + 15 rows Economy (4-18)
+  for(let row=1; row<=18; row++){
+    const isBiz = row <= 3;
+    const div = document.createElement('div');
+    div.className = 'seat-row';
+    const rn = document.createElement('div');
+    rn.className = 'row-num';
+    rn.textContent = row;
+    div.appendChild(rn);
+    ['A','B'].forEach(col => {
+      const seatNum = (row-1)*4 + (col==='A'?1:2);
+      const occ = OCCUPIED.includes(seatNum);
+      const s = document.createElement('div');
+      s.className = `seat${isBiz?' biz':''}${occ?' occ':''}`;
+      s.textContent = col;
+      s.dataset.seat = `${row}${col}`;
+      s.dataset.biz = isBiz;
+      if(!occ) s.onclick = () => toggleSeat(s, `${row}${col}`);
+      div.appendChild(s);
+    });
+    const aisle = document.createElement('div'); aisle.className='aisle'; div.appendChild(aisle);
+    ['C','D'].forEach(col => {
+      const seatNum = (row-1)*4 + (col==='C'?3:4);
+      const occ = OCCUPIED.includes(seatNum);
+      const s = document.createElement('div');
+      s.className = `seat${isBiz?' biz':''}${occ?' occ':''}`;
+      s.textContent = col;
+      s.dataset.seat = `${row}${col}`;
+      s.dataset.biz = isBiz;
+      if(!occ) s.onclick = () => toggleSeat(s, `${row}${col}`);
+      div.appendChild(s);
+    });
+    map.appendChild(div);
+  }
+  updateSeatNote();
+}
+
+function toggleSeat(el, id){
+  if(el.classList.contains('sel')){
+    el.classList.remove('sel');
+    selectedSeats = selectedSeats.filter(s => s!==id);
+  } else {
+    if(selectedSeats.length >= paxCount){ showToast(`Select exactly ${paxCount} seat(s).`); return; }
+    el.classList.add('sel');
+    selectedSeats.push(id);
+  }
+  updateSeatNote();
+}
+
+function updateSeatNote(){
+  document.getElementById('seatsNeeded').textContent = paxCount;
+  document.getElementById('seatsSelected').textContent = selectedSeats.length;
+}
+
+// ─── PASSENGER FORMS ───
+function buildPassengerForms(){
+  const wrap = document.getElementById('passengerForms');
+  wrap.innerHTML = '';
+  for(let i=0; i<paxCount; i++){
+    wrap.insertAdjacentHTML('beforeend',`
+      <div class="pax-section">
+        <div class="pax-title"><span class="pax-num">${i+1}</span>Passenger ${i+1}${i===0?' (Lead)':''}</div>
+        <div class="form-grid" style="margin-bottom:.7rem">
+          <div class="fg"><label>Title</label>
+            <select id="p${i}title"><option>Mr</option><option>Mrs</option><option>Ms</option><option>Dr</option></select>
+          </div>
+          <div class="fg"><label>Nationality</label><input id="p${i}nat" placeholder="e.g. Tanzanian"/></div>
+        </div>
+        <div class="form-grid" style="margin-bottom:.7rem">
+          <div class="fg"><label>First Name *</label><input id="p${i}fn" placeholder="First name"/></div>
+          <div class="fg"><label>Last Name *</label><input id="p${i}ln" placeholder="Last name"/></div>
+        </div>
+        <div class="form-grid three" style="margin-bottom:.7rem">
+          <div class="fg"><label>Date of Birth</label><input type="date" id="p${i}dob"/></div>
+          <div class="fg"><label>Passport / ID No.</label><input id="p${i}pass" placeholder="Passport number"/></div>
+          <div class="fg"><label>Passport Expiry</label><input type="date" id="p${i}exp"/></div>
+        </div>
+      </div>`);
+  }
+}
+
+// ─── REVIEW ───
+function buildReview(){
+  const ecoPrice = currentRoute.eco * paxCount;
+  const bizPrice = currentRoute.biz * paxCount;
+  const price = selectedClass === 'eco' ? ecoPrice : bizPrice;
+  const cls = selectedClass === 'eco' ? 'Economy' : 'Business';
+
+  // collect passenger names
+  const paxLines = [];
+  for(let i=0;i<paxCount;i++){
+    const t = document.getElementById(`p${i}title`)?.value||'';
+    const fn = document.getElementById(`p${i}fn`)?.value||'';
+    const ln = document.getElementById(`p${i}ln`)?.value||'';
+    if(fn||ln) paxLines.push(`${t} ${fn} ${ln}`.trim());
+  }
+  const phone = document.getElementById('paxPhone')?.value||'';
+  const email = document.getElementById('paxEmail')?.value||'';
+
+  document.getElementById('reviewBlock').innerHTML = `
+    <div class="rb-title">Booking Summary</div>
+    <div class="rb-row"><span>Route</span><span class="val">${currentRoute.fromName} (${currentRoute.from}) → ${currentRoute.toName} (${currentRoute.to})</span></div>
+    <div class="rb-row"><span>Type</span><span class="val">${tripType==='rt'?'Round Trip':'One Way'} · ${currentRoute.type}</span></div>
+    <div class="rb-row"><span>Duration</span><span class="val">${currentRoute.duration}</span></div>
+    <div class="rb-row"><span>Fare Class</span><span class="val">${cls}</span></div>
+    <div class="rb-row"><span>Seats</span><span class="val">${selectedSeats.join(', ')||'Not selected'}</span></div>
+    <div class="rb-row"><span>Passengers</span><span class="val">${paxLines.join(' | ')||paxCount+' passenger(s)'}</span></div>
+    <div class="rb-row"><span>Contact</span><span class="val">${phone||'—'}</span></div>
+    ${email?`<div class="rb-row"><span>Email</span><span class="val">${email}</span></div>`:''}
+    <div class="rb-row total"><span>Total Fare (${paxCount} pax)</span><span class="val">${fmt(price)}<br/><small style="font-weight:400;font-size:.72rem">${fmtTZS(price)}</small></span></div>`;
+}
+
+// ─── OPEN MODAL ───
+function openModal(route){
+  if(route) currentRoute = route;
+  if(!currentRoute) currentRoute = ROUTES[0];
+  currentStep = 1;
+  selectedSeats = [];
+  selectedClass = 'eco';
+
+  // Flight summary
+  const ecoTotal = currentRoute.eco * paxCount;
+  const bizTotal = currentRoute.biz * paxCount;
+  document.getElementById('mFlightSummary').innerHTML = `
+    <div class="fs-route">
+      <div class="fs-city">${currentRoute.fromName} <span style="font-size:.72rem;color:var(--mid)">(${currentRoute.from})</span></div>
+      <div class="fs-arrow">→</div>
+      <div class="fs-city">${currentRoute.toName} <span style="font-size:.72rem;color:var(--mid)">(${currentRoute.to})</span></div>
+      ${tripType==='rt'?'<div style="font-size:.72rem;background:var(--red);color:#fff;padding:.18rem .55rem;border-radius:20px;font-weight:700">Return</div>':''}
+    </div>
+    <div class="fs-details">
+      <div class="fs-item"><label>Type</label><span>${currentRoute.type}</span></div>
+      <div class="fs-item"><label>Duration</label><span>${currentRoute.duration}</span></div>
+      <div class="fs-item"><label>Passengers</label><span>${paxCount}</span></div>
+      <div class="fs-item"><label>Daily Flights</label><span>${currentRoute.dep.length} times</span></div>
+    </div>`;
+
+  // Class cards
+  document.getElementById('classCards').innerHTML = `
+    <label style="border:2px solid var(--red);background:#fff7f6;border-radius:10px;padding:1.2rem;cursor:pointer;position:relative" id="ecoCard">
+      <input type="radio" name="fareClass" value="eco" checked style="display:none" onchange="setClass('eco')"/>
+      <div style="font-size:.68rem;font-weight:800;letter-spacing:.1em;color:var(--mid);text-transform:uppercase;margin-bottom:.3rem">Economy</div>
+      <div style="font-family:var(--serif);font-size:1.6rem;font-weight:800;color:var(--red);line-height:1">${fmt(ecoTotal)}</div>
+      <div style="font-size:.72rem;color:var(--mid);margin-top:.1rem">${fmtTZS(ecoTotal)} · ${paxCount} pax</div>
+      <div style="font-size:.72rem;color:#555;margin-top:.5rem">23kg baggage · 7kg cabin · Meals on select routes</div>
+      <div style="position:absolute;top:10px;right:10px;background:var(--red);color:#fff;border-radius:50%;width:20px;height:20px;display:flex;align-items:center;justify-content:center;font-size:.75rem" id="ecoCheck">✓</div>
+    </label>
+    <label style="border:2px solid var(--border);background:#fff;border-radius:10px;padding:1.2rem;cursor:pointer;position:relative" id="bizCard">
+      <input type="radio" name="fareClass" value="biz" style="display:none" onchange="setClass('biz')"/>
+      <div style="font-size:.68rem;font-weight:800;letter-spacing:.1em;color:var(--gold);text-transform:uppercase;margin-bottom:.3rem">Business</div>
+      <div style="font-family:var(--serif);font-size:1.6rem;font-weight:800;color:var(--navy);line-height:1">${fmt(bizTotal)}</div>
+      <div style="font-size:.72rem;color:var(--mid);margin-top:.1rem">${fmtTZS(bizTotal)} · ${paxCount} pax</div>
+      <div style="font-size:.72rem;color:#555;margin-top:.5rem">Priority boarding · Extra legroom · Premium meals</div>
+      <div style="position:absolute;top:10px;right:10px;background:var(--border);color:transparent;border-radius:50%;width:20px;height:20px;display:flex;align-items:center;justify-content:center;font-size:.75rem" id="bizCheck">✓</div>
+    </label>`;
+
+  document.getElementById('mTitle').textContent = `Book: ${currentRoute.fromName} → ${currentRoute.toName}`;
+  document.getElementById('mSub').textContent = `${currentRoute.type} · ${currentRoute.duration} · ${paxCount} passenger(s)`;
+  gotoStep(1);
+  document.getElementById('modalBg').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function setClass(c){
+  selectedClass = c;
+  const ecoCard = document.getElementById('ecoCard');
+  const bizCard = document.getElementById('bizCard');
+  const ecoCheck = document.getElementById('ecoCheck');
+  const bizCheck = document.getElementById('bizCheck');
+  if(c==='eco'){
+    ecoCard.style.border='2px solid var(--red)'; ecoCard.style.background='#fff7f6';
+    bizCard.style.border='2px solid var(--border)'; bizCard.style.background='#fff';
+    ecoCheck.style.background='var(--red)'; ecoCheck.style.color='#fff';
+    bizCheck.style.background='var(--border)'; bizCheck.style.color='transparent';
+  } else {
+    bizCard.style.border='2px solid var(--gold)'; bizCard.style.background='#fffbea';
+    ecoCard.style.border='2px solid var(--border)'; ecoCard.style.background='#fff';
+    bizCheck.style.background='var(--gold)'; bizCheck.style.color='var(--navy)';
+    ecoCheck.style.background='var(--border)'; ecoCheck.style.color='transparent';
+  }
+}
+
+function closeModal(){
+  document.getElementById('modalBg').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function handleBgClick(e){ if(e.target.id==='modalBg') closeModal(); }
+
+function gotoStep(n){
+  currentStep = n;
+  for(let i=1;i<=4;i++){
+    document.getElementById(`step${i}`).classList.toggle('show', i===n);
+    const ms = document.getElementById(`mStep${i}`);
+    ms.classList.remove('active','done');
+    if(i===n) ms.classList.add('active');
+    else if(i<n) ms.classList.add('done');
+  }
+  document.getElementById('prevBtn').style.display = n===1?'none':'flex';
+  document.getElementById('nextBtn').textContent = n===4?'Confirm':'Continue →';
+  document.getElementById('nextBtn').onclick = n===4 ? confirmBooking : nextStep;
+
+  if(n===2){ buildSeatMap(); document.getElementById('seatsNeeded').textContent=paxCount; }
+  if(n===3) buildPassengerForms();
+  if(n===4) buildReview();
+}
+
+function nextStep(){
+  if(currentStep===2 && selectedSeats.length < paxCount){
+    showToast(`Please select ${paxCount} seat(s). You have ${selectedSeats.length}.`); return;
+  }
+  if(currentStep===3){
+    for(let i=0;i<paxCount;i++){
+      if(!document.getElementById(`p${i}fn`)?.value.trim()||!document.getElementById(`p${i}ln`)?.value.trim()){
+        showToast(`Please enter full name for Passenger ${i+1}.`); return;
+      }
+    }
+    if(!document.getElementById('paxPhone')?.value.trim()){
+      showToast('Please enter a contact phone number.'); return;
+    }
+  }
+  if(currentStep < 4) gotoStep(currentStep+1);
+}
+
+function prevStep(){ if(currentStep > 1) gotoStep(currentStep-1); }
+
+// ─── CONFIRM BOOKING → WHATSAPP ───
+function confirmBooking(){
+  const pricePerPax = selectedClass==='eco' ? currentRoute.eco : currentRoute.biz;
+  const price = pricePerPax * paxCount;
+  const cls = selectedClass==='eco' ? 'Economy' : 'Business Class';
+
+  // Collect passenger data
+  const paxData = [];
+  for(let i=0;i<paxCount;i++){
+    paxData.push({
+      title : document.getElementById(`p${i}title`)?.value||'Mr',
+      fn    : document.getElementById(`p${i}fn`)?.value||'',
+      ln    : document.getElementById(`p${i}ln`)?.value||'',
+      dob   : document.getElementById(`p${i}dob`)?.value||'',
+      pass  : document.getElementById(`p${i}pass`)?.value||'',
+      nat   : document.getElementById(`p${i}nat`)?.value||'',
+      exp   : document.getElementById(`p${i}exp`)?.value||''
+    });
+  }
+  const phone = document.getElementById('paxPhone')?.value||'';
+  const email = document.getElementById('paxEmail')?.value||'';
+  const dep   = document.getElementById('sDep')?.value||'';
+  const ret   = document.getElementById('sRet')?.value||'';
+
+  // Format date nicely: 2026-05-08 -> Fri, 08 May 2026
+  function fmtDate(d){
+    if(!d) return 'To be confirmed';
+    const dt = new Date(d+'T00:00:00');
+    return dt.toLocaleDateString('en-GB',{weekday:'short',day:'2-digit',month:'short',year:'numeric'});
+  }
+
+  // Booking reference
+  const ref = 'PW-' + Math.random().toString(36).slice(2,8).toUpperCase();
+  const now = new Date().toLocaleString('en-GB',{day:'2-digit',month:'short',year:'numeric',hour:'2-digit',minute:'2-digit',hour12:false});
+
+  // Lead passenger
+  const lead = paxData[0];
+  const leadName = `${lead.title} ${lead.fn} ${lead.ln}`.trim().toUpperCase();
+
+  // Seat list per passenger
+  const seatPerPax = selectedSeats.length
+    ? selectedSeats.join(', ')
+    : 'To be assigned';
+
+  // All passengers block
+  let allPaxBlock = '';
+  paxData.forEach((p,i)=>{
+    const name = `${p.title} ${p.fn} ${p.ln}`.trim().toUpperCase();
+    const seat = selectedSeats[i] || 'To be assigned';
+    allPaxBlock +=
+      `  PAX ${i+1} — ${i===0?'Adult (LEAD)':'Adult'}\n` +
+      `  Name       : ${name}\n` +
+      (p.dob  ? `  DOB        : ${p.dob}\n` : '') +
+      (p.nat  ? `  Nationality: ${p.nat}\n` : '') +
+      (p.pass ? `  Passport   : ${p.pass}\n` : '') +
+      (p.exp  ? `  Expiry     : ${p.exp}\n` : '') +
+      `  ${tripType==='rt'?'Outbound ':''}Seat: ${seat}\n` +
+      (tripType==='rt'? `  Return Seat: To be assigned\n` : '') +
+      `─────────────────────────────\n`;
+  });
+
+  // Fare breakdown
+  let fareBreakdown = `Adults (${paxCount}) : ${fmt(price)}\n`;
+  if(tripType==='rt') fareBreakdown += `Return fare included\n`;
+
+  const msg =
+    `✅ *PRECISION AIR BOOKING REQUEST*\n` +
+    `─────────────────────────────\n` +
+    `📋 *Booking Ref:* ${ref}\n` +
+    `🕐 *Time:* ${now}\n` +
+    `📞 *Contact No.:* ${phone||'—'}\n` +
+    `🏦 *Agent:* +254 103 761 442 (Precision Air)\n` +
+    `💵 *Total Fare:* ${fmt(price)} (${fmtTZS(price)})\n` +
+    `─────────────────────────────\n` +
+    `🛫 *FLIGHT DETAILS*\n` +
+    `─────────────────────────────\n` +
+    `Route     : ${currentRoute.fromName} (${currentRoute.from})  ✈  ${currentRoute.toName} (${currentRoute.to})\n` +
+    `Trip Type : ${tripType==='rt'?'Round Trip ⇄':'One Way →'}\n` +
+    `Departure : ${fmtDate(dep)}\n` +
+    (tripType==='rt'?`Return    : ${fmtDate(ret)}\n`:'') +
+    `Airline   : Precision Air (PW)\n` +
+    `Cabin     : ${cls}\n` +
+    `Duration  : ${currentRoute.duration}\n` +
+    `Baggage   : 23kg checked + 7kg cabin\n` +
+    `Seats     : ${seatPerPax}\n` +
+    `─────────────────────────────\n` +
+    `👤 *LEAD PASSENGER*\n` +
+    `─────────────────────────────\n` +
+    `Name        : ${leadName}\n` +
+    `WhatsApp    : ${phone||'—'}\n` +
+    `Email       : ${email||'—'}\n` +
+    `Nationality : ${lead.nat||'—'}\n` +
+    `Passport    : ${lead.pass||'—'}\n` +
+    (lead.exp?`Passport Expiry: ${lead.exp}\n`:'') +
+    `─────────────────────────────\n` +
+    `🧳 *ALL PASSENGERS (${paxCount} total)*\n` +
+    `─────────────────────────────\n` +
+    allPaxBlock +
+    `💰 *FARE BREAKDOWN*\n` +
+    `─────────────────────────────\n` +
+    fareBreakdown +
+    `*TOTAL : ${fmt(price)}*\n` +
+    `TZS equiv: ${fmtTZS(price)}\n` +
+    `─────────────────────────────\n` +
+    `🎫 *BOOKING CONFIRMATION*\n` +
+    `─────────────────────────────\n` +
+    `Ref: ${ref}\n` +
+    `Please confirm receipt and issue e-ticket.\n` +
+    `─────────────────────────────\n` +
+    `_Please confirm payment receipt and issue e-ticket. Thank you!_ 🙏`;
+
+  window.open(`https://wa.me/${WA}?text=${encodeURIComponent(msg)}`, '_blank');
+  showToast('Opening WhatsApp — your booking is being sent!');
+  closeModal();
+}
+
+// ─── TOAST ───
+function showToast(m){
+  const t = document.getElementById('toast');
+  t.textContent = m;
+  t.classList.add('show');
+  setTimeout(()=>t.classList.remove('show'), 3000);
+}
+
+// ─── INIT ───
+renderRoutes();
+// Set min date to today
+const today = new Date().toISOString().split('T')[0];
+document.getElementById('sDep').min = today;
+document.getElementById('sRet').min = today;
+document.getElementById('sDep').value = today;
+</script>
+
+<script>
+function openModalByCode(code) {
+  const route = ROUTES.find(r => r.code === code);
+  openModal(route || ROUTES[0]);
+}
+</script>
+
+</body></html>
