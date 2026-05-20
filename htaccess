@@ -1,18 +1,3 @@
-# Allow sitemap and robots to be read publicly
 <Files "sitemap.xml">
-    Order Allow,Deny
-    Allow from all
+  Allow from all
 </Files>
-
-<Files "robots.txt">
-    Order Allow,Deny
-    Allow from all
-</Files>
-
-# Correct MIME type for sitemap
-AddType application/xml .xml
-
-# Optional: enable GZIP compression for faster crawling
-<IfModule mod_deflate.c>
-    AddOutputFilterByType DEFLATE application/xml text/xml text/html text/css application/javascript
-</IfModule>
