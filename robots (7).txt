@@ -1,0 +1,32 @@
+# robots.txt — Skyward Airlines
+# https://www.skywardairlines.co.ke/robots.txt
+
+User-agent: *
+Allow: /
+
+# Block internal/booking processing paths
+Disallow: /booking/confirmation/
+Disallow: /booking/payment/
+Disallow: /booking/processing/
+Disallow: /admin/
+Disallow: /api/
+Disallow: /wp-admin/
+Disallow: /cgi-bin/
+Disallow: /tmp/
+Disallow: /private/
+Disallow: /*.json$
+Disallow: /*.xml$
+
+# Allow search engines to crawl key public pages
+Allow: /destinations/
+Allow: /fares/
+Allow: /fleet/
+Allow: /about/
+Allow: /contact/
+Allow: /blog/
+
+# Crawl-delay to reduce server load
+Crawl-delay: 10
+
+# Sitemap location
+Sitemap: https://www.skywardairlines.co.ke/sitemap.xml
