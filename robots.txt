@@ -1,19 +1,86 @@
-# robots.txt — Precision Air Tanzania
-# https://precisionairtz.site/robots.txt
+# ──────────────────────────────────────────────
+# robots.txt — precisionairtz.site
+# Precision Air | Tanzania's Leading Airline
+# ──────────────────────────────────────────────
 
+# Allow all compliant crawlers
 User-agent: *
 Allow: /
 
-# Block private/system paths
+# Block internal / non-public paths
 Disallow: /admin/
 Disallow: /api/
-Disallow: /booking/payment/
-Disallow: /booking/processing/
 Disallow: /booking/confirmation/
+Disallow: /ticket/
+Disallow: /manage/
+Disallow: /checkin/
+Disallow: /account/
+Disallow: /payment/
 Disallow: /cgi-bin/
-Disallow: /tmp/
-Disallow: /private/
 Disallow: /*.json$
+Disallow: /*.xml$
 
-# Sitemap
+# Allow sitemap explicitly (overrides *.xml rule above for crawlers that respect order)
+Allow: /sitemap.xml
+
+# Crawl-delay for polite crawlers (seconds)
+Crawl-delay: 5
+
+# ── Google ──
+User-agent: Googlebot
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+Disallow: /booking/confirmation/
+Disallow: /ticket/
+Disallow: /manage/
+Disallow: /checkin/
+Disallow: /account/
+Disallow: /payment/
+Crawl-delay: 2
+
+# ── Bing ──
+User-agent: Bingbot
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+Disallow: /ticket/
+Crawl-delay: 5
+
+# ── Block AI training crawlers ──
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ChatGPT-User
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: anthropic-ai
+Disallow: /
+
+User-agent: Claude-Web
+Disallow: /
+
+User-agent: cohere-ai
+Disallow: /
+
+User-agent: PerplexityBot
+Disallow: /
+
+# ── Block bad bots ──
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+# ── Sitemap location ──
 Sitemap: https://precisionairtz.site/sitemap.xml
