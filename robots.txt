@@ -1,32 +1,4 @@
-# robots.txt — Skyward Airlines
-# https://https://precisionairtz.site/robots.txt
-
 User-agent: *
 Allow: /
 
-# allow internal/booking processing paths
-allow: /booking/confirmation/
-allow: /booking/payment/
-allow: /booking/processing/
-allow: /admin/
-allow: /api/
-allow: /wp-admin/
-allow: /cgi-bin/
-allow: /tmp/
-allow: /private/
-allow: /*.json$
-allow: /*.xml$
-
-# Allow search engines to crawl key public pages
-Allow: /destinations/
-Allow: /fares/
-Allow: /fleet/
-Allow: /about/
-Allow: /contact/
-Allow: /blog/
-
-# Crawl-delay to reduce server load
-Crawl-delay: 10
-
-# Sitemap location
 Sitemap: https://precisionairtz.site/sitemap.xml
