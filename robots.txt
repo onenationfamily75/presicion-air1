@@ -1,4 +1,9 @@
+# robots.txt — Precision Air
+# https://precisionairtez.site/robots.txt
+
 User-agent: *
 Allow: /
+Allow: /flights/
+Allow: /destinations/
 
-Sitemap: https://precisionairtz.site/sitemap.xml
+Sitemap: https://precisionairtez.site/sitemap.xml
