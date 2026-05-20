@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <!-- ── CORE PAGES ── -->
+
+  <url>
+    <loc>https://precisionairtez.site/</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://precisionairtez.site/book/</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.95</priority>
+  </url>
+
+  <url>
+    <loc>https://precisionairtez.site/destinations/</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://precisionairtez.site/fares/</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://precisionairtez.site/fleet/</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+  <url>
+    <loc>https://precisionairtez.site/about/</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://precisionairtez.site/contact/</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://precisionairtez.site/blog/</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.65</priority>
+  </url>
+
+  <url>
+    <loc>https://precisionairtez.site/check-in/</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://precisionairtez.site/manage-booking/</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+  <url>
+    <loc>https://precisionairtez.site/ebari-lounge/</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://precisionairtez.site/baggage/</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+
+  <url>
+    <loc>https://precisionairtez.site/privacy-policy/</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <url>
+    <loc>https://precisionairtez.site/terms-and-conditions/</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <!-- ── DOMESTIC DESTINATION PAGES ── -->
+
+  <url>
+    <loc>https://precisionairtez.site/destinations/mombasa/</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1546182990-dffeafbe841d?w=1200</image:loc>
+      <image:title>Mombasa — Skyward Airlines</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://precisionairtez.site/destinations/ukunda-diani/</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1575783970733-1aaedde1db74?w=1200</image:loc>
+      <image:title>Ukunda / Diani Beach — Skyward Airlines</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://precisionairtez.site/destinations/malindi/</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.82</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1474511320723-9a56873867b5?w=1200</image:loc>
+      <image:title>Malindi — Skyward Airlines</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://precisionairtez.site/destinations/eldoret/</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.82</priority>
+  </url>
+
+  <url>
+    <loc>https://precisionairtez.site/destinations/lamu/</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.83</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1564760055775-d63b17a55c44?w=1200</image:loc>
+      <image:title>Lamu Island — Skyward Airlines</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://precisionairtez.site/destinations/lodwar/</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.78</priority>
+  </url>
+
+  <url>
+    <loc>https://precisionairtez.site/destinations/vipingo-ridge/</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.78</priority>
+  </url>
+
+  <url>
+    <loc>https://precisionairtez.site/destinations/mandera/</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+  <url>
+    <loc>https://precisionairtez.site/destinations/kakuma/</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+  <url>
+    <loc>https://precisionairtez.site/destinations/migori/</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+  <url>
+    <loc>https://precisionairtez.site/destinations/kitale/</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+  <!-- ── INTERNATIONAL DESTINATION PAGES ── -->
+
+  <url>
+    <loc>https://precisionairtez.site/destinations/dar-es-salaam/</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.88</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1585468274952-66591eb14165?w=1200</image:loc>
+      <image:title>Dar es Salaam, Tanzania — Skyward Airlines</image:title>
+    </image:image>
+  </url>
+
+  <!-- ── FLEET PAGES ── -->
+
+  <url>
+    <loc>https://precisionairtez.site/fleet/fokker-50/</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://precisionairtez.site/fleet/bombardier-dash-8/</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- ── ROUTE-SPECIFIC BOOKING PAGES ── -->
+
+  <url>
+    <loc>https://precisionairtez.site/book/nairobi-mombasa/</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.92</priority>
+  </url>
+
+  <url>
+    <loc>https://precisionairtez.site/book/nairobi-lamu/</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.88</priority>
+  </url>
+
+  <url>
+    <loc>https://precisionairtez.site/book/nairobi-malindi/</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.87</priority>
+  </url>
+
+  <url>
+    <loc>https://precisionairtez.site/book/nairobi-eldoret/</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.86</priority>
+  </url>
+
+  <url>
+    <loc>https://precisionairtez.site/book/nairobi-dar-es-salaam/</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://precisionairtez.site/book/nairobi-lodwar/</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.82</priority>
+  </url>
+
+</urlset>
