@@ -5,11 +5,5 @@
 User-agent: *
 Allow: /
 
-# Block access to any admin or private folders (adjust as needed)
-Disallow: /admin/
-Disallow: /cgi-bin/
-Disallow: /private/
-Disallow: /tmp/
-
 # Sitemap location
 Sitemap: https://precisionairtz.site/sitemap.xml
