@@ -1,0 +1,1204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Precision Air — Tanzania's Airline</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ── TOKENS ── */
+:root {
+  --red:#c0281f; --red2:#a01e16; --red3:#e8352b;
+  --ink:#0b1320; --ink2:#1c2b3a; --ink3:#2e4057;
+  --sand:#f5f0e8; --sand2:#ede6d8; --sand3:#d4c9b4;
+  --gold:#c9943a; --gold2:#e6b84a;
+  --white:#ffffff;
+  --muted:#7a8899;
+  --border:#e2ddd4;
+  --TZS:2605;
+  --shadow-sm:0 2px 12px rgba(11,19,32,.07);
+  --shadow-md:0 8px 40px rgba(11,19,32,.13);
+  --shadow-lg:0 20px 80px rgba(11,19,32,.2);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Plus Jakarta Sans',sans-serif;color:var(--ink);background:var(--white);overflow-x:hidden;}
+img{display:block;}
+button,select,input{font-family:inherit;}
+
+/* ── SCROLLBAR ── */
+::-webkit-scrollbar{width:6px;}
+::-webkit-scrollbar-track{background:var(--sand);}
+::-webkit-scrollbar-thumb{background:var(--red);border-radius:3px;}
+
+/* ═══════════════════════════════════════
+   NAV
+═══════════════════════════════════════ */
+nav{
+  position:fixed;top:0;width:100%;z-index:400;
+  transition:background .35s,box-shadow .35s,padding .35s;
+  padding:1.4rem 0;
+}
+nav.scrolled{
+  background:rgba(11,19,32,.97);
+  backdrop-filter:blur(20px);
+  box-shadow:0 1px 0 rgba(255,255,255,.06);
+  padding:.85rem 0;
+}
+.nav-inner{
+  max-width:1320px;margin:0 auto;padding:0 2.5rem;
+  display:flex;justify-content:space-between;align-items:center;
+}
+.logo{display:flex;align-items:center;gap:.7rem;text-decoration:none;}
+.logo-mark{
+  width:38px;height:38px;background:var(--red);
+  display:flex;align-items:center;justify-content:center;
+  clip-path:polygon(0 0,100% 0,100% 75%,75% 100%,0 100%);
+}
+.logo-mark svg{width:22px;height:22px;fill:#fff;}
+.logo-wordmark{line-height:1.1;}
+.logo-name{font-family:'Libre Baskerville',serif;font-size:1.15rem;font-weight:700;color:#fff;letter-spacing:.3px;}
+.logo-tagline{font-size:.58rem;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:2.5px;}
+.nav-links{display:flex;align-items:center;gap:2.5rem;}
+.nav-links a{color:rgba(255,255,255,.75);text-decoration:none;font-size:.8rem;font-weight:500;letter-spacing:.6px;text-transform:uppercase;transition:color .2s;}
+.nav-links a:hover{color:#fff;}
+.nav-cta{
+  background:var(--red);color:#fff!important;
+  padding:.55rem 1.5rem;
+  clip-path:polygon(0 0,100% 0,100% 70%,90% 100%,0 100%);
+  transition:background .25s!important;
+}
+.nav-cta:hover{background:var(--red2)!important;}
+
+/* ═══════════════════════════════════════
+   HERO
+═══════════════════════════════════════ */
+.hero{
+  position:relative;height:100vh;min-height:700px;
+  display:flex;align-items:flex-end;overflow:hidden;
+}
+.hero-media{position:absolute;inset:0;z-index:0;}
+.hero-media img{width:100%;height:100%;object-fit:cover;object-position:center 40%;}
+.hero-media::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(155deg,rgba(11,19,32,.7) 0%,rgba(11,19,32,.2) 50%,rgba(192,40,31,.35) 100%);
+}
+.hero-content{
+  position:relative;z-index:2;width:100%;
+  padding-bottom:0;
+}
+.hero-text{
+  max-width:1320px;margin:0 auto;
+  padding:0 2.5rem 2rem;
+}
+.hero-eyebrow{
+  display:inline-flex;align-items:center;gap:.6rem;
+  font-size:.68rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;
+  color:var(--gold2);margin-bottom:1.3rem;
+}
+.hero-eyebrow::before{content:'';width:28px;height:1px;background:var(--gold2);}
+h1.hero-heading{
+  font-family:'Libre Baskerville',serif;
+  font-size:clamp(2.6rem,5.5vw,5rem);
+  font-weight:700;color:#fff;line-height:1.08;
+  margin-bottom:1rem;max-width:700px;
+}
+h1.hero-heading em{font-style:italic;color:var(--gold2);}
+.hero-sub{
+  color:rgba(255,255,255,.72);font-size:1rem;line-height:1.75;
+  max-width:480px;margin-bottom:2rem;font-weight:300;
+}
+.hero-badges{display:flex;gap:.8rem;flex-wrap:wrap;margin-bottom:2.5rem;}
+.hero-badge{
+  background:rgba(255,255,255,.1);backdrop-filter:blur(8px);
+  border:1px solid rgba(255,255,255,.15);
+  color:rgba(255,255,255,.85);padding:.35rem .9rem;
+  font-size:.68rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;
+}
+
+/* ── SEARCH BAR ── */
+.search-bar{
+  background:var(--white);
+  box-shadow:0 -3px 0 var(--red), var(--shadow-lg);
+  padding:1.8rem 2.5rem 2rem;
+  max-width:1320px;margin:0 auto;
+  position:relative;
+}
+.search-bar::before{
+  content:'';position:absolute;top:0;left:2.5rem;right:2.5rem;height:1px;
+  background:linear-gradient(90deg,transparent,var(--gold),transparent);
+  opacity:.4;
+}
+.trip-tabs{display:flex;gap:0;margin-bottom:1.5rem;border-bottom:2px solid var(--border);}
+.trip-tab{
+  padding:.6rem 1.6rem;font-size:.75rem;font-weight:700;
+  text-transform:uppercase;letter-spacing:1px;background:none;border:none;
+  cursor:pointer;color:var(--muted);position:relative;transition:color .2s;
+}
+.trip-tab.active{color:var(--red);}
+.trip-tab.active::after{
+  content:'';position:absolute;bottom:-2px;left:0;right:0;
+  height:2px;background:var(--red);
+}
+.search-fields{
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr 1fr auto;
+  gap:.9rem;align-items:end;
+}
+.sf-group{display:flex;flex-direction:column;gap:.3rem;}
+.sf-label{
+  font-size:.63rem;font-weight:700;text-transform:uppercase;
+  letter-spacing:2px;color:var(--muted);
+}
+.sf-group select,.sf-group input{
+  border:1.5px solid var(--border);background:var(--sand);
+  padding:.75rem 1rem;color:var(--ink);font-size:.9rem;
+  outline:none;transition:border-color .25s,background .25s;
+  appearance:none;-webkit-appearance:none;
+}
+.sf-group select{
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='7'%3E%3Cpath fill='%237a8899' d='M5.5 7L0 0h11z'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 12px center;
+  background-color:var(--sand);padding-right:2.5rem;
+}
+.sf-group select:focus,.sf-group input:focus{
+  border-color:var(--red);background:var(--white);
+}
+.btn-search{
+  background:var(--red);color:#fff;border:none;
+  padding:.78rem 2.2rem;font-size:.82rem;font-weight:700;
+  text-transform:uppercase;letter-spacing:1.5px;cursor:pointer;
+  white-space:nowrap;transition:background .25s;
+  clip-path:polygon(0 0,100% 0,100% 75%,92% 100%,0 100%);
+}
+.btn-search:hover{background:var(--red2);}
+.return-fields{
+  display:grid;grid-template-columns:1fr 1fr;gap:.9rem;
+  margin-top:.9rem;display:none;
+}
+.return-fields.show{display:grid;}
+
+/* ═══════════════════════════════════════
+   RESULTS
+═══════════════════════════════════════ */
+.results-wrap{
+  max-width:1320px;margin:0 auto;
+  padding:3rem 2.5rem;display:none;
+}
+.results-wrap.show{display:block;}
+.results-head{
+  display:flex;justify-content:space-between;align-items:baseline;
+  margin-bottom:1.5rem;
+  padding-bottom:1rem;border-bottom:2px solid var(--sand2);
+}
+.results-head h2{
+  font-family:'Libre Baskerville',serif;font-size:1.6rem;font-weight:700;
+}
+.results-meta{font-size:.8rem;color:var(--muted);}
+
+/* Flight Card */
+.fc{
+  border:1.5px solid var(--border);
+  margin-bottom:.9rem;
+  transition:border-color .25s,box-shadow .25s,transform .25s;
+  background:var(--white);overflow:hidden;
+}
+.fc:hover{
+  border-color:var(--red);
+  box-shadow:var(--shadow-md);
+  transform:translateY(-2px);
+}
+.fc-main{
+  display:grid;
+  grid-template-columns:200px 1fr auto auto;
+  gap:1.5rem;align-items:center;
+  padding:1.4rem 1.6rem;
+}
+.fc-airline{display:flex;align-items:center;gap:.8rem;}
+.fc-airline-logo{
+  width:40px;height:40px;background:var(--red);
+  display:flex;align-items:center;justify-content:center;
+  clip-path:polygon(0 0,100% 0,100% 75%,75% 100%,0 100%);
+  flex-shrink:0;
+}
+.fc-airline-logo svg{width:24px;height:24px;fill:#fff;}
+.fc-airline-info{line-height:1.2;}
+.fc-airline-name{font-size:.8rem;font-weight:700;color:var(--ink);}
+.fc-aircraft{font-size:.65rem;color:var(--muted);text-transform:uppercase;letter-spacing:1px;}
+.fc-route{display:flex;align-items:center;gap:1.5rem;}
+.fc-point{text-align:center;}
+.fc-time{font-size:1.5rem;font-weight:700;letter-spacing:-1px;color:var(--ink);line-height:1;}
+.fc-code{font-size:.68rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:1.5px;margin-top:.2rem;}
+.fc-city{font-size:.7rem;color:var(--muted);}
+.fc-via{flex:1;text-align:center;position:relative;}
+.fc-line{height:1px;background:var(--border);}
+.fc-plane{
+  position:absolute;top:50%;right:0;transform:translateY(-50%);
+  width:22px;height:22px;background:var(--white);
+  display:flex;align-items:center;justify-content:center;
+}
+.fc-dur{font-size:.7rem;color:var(--muted);margin-bottom:.3rem;}
+.fc-nonstop{font-size:.65rem;color:var(--gold);font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-top:.3rem;}
+.fc-price{text-align:right;}
+.fc-price-usd{font-size:1.7rem;font-weight:700;color:var(--red);line-height:1;letter-spacing:-1px;}
+.fc-price-tzs{font-size:.75rem;color:var(--muted);margin-top:.15rem;}
+.fc-per{font-size:.62rem;color:var(--muted);}
+.btn-select{
+  background:var(--red);color:#fff;border:none;
+  padding:.72rem 1.6rem;font-size:.75rem;font-weight:700;
+  text-transform:uppercase;letter-spacing:1.5px;cursor:pointer;
+  clip-path:polygon(0 0,100% 0,100% 70%,88% 100%,0 100%);
+  transition:background .25s;white-space:nowrap;
+}
+.btn-select:hover{background:var(--red2);}
+.fc-footer{
+  background:var(--sand);padding:.7rem 1.6rem;
+  border-top:1px solid var(--border);
+  display:flex;gap:2rem;flex-wrap:wrap;
+}
+.fc-tag{font-size:.7rem;color:var(--muted);display:flex;align-items:center;gap:.35rem;}
+.fc-tag strong{color:var(--ink2);}
+
+/* ═══════════════════════════════════════
+   ROUTE CARDS
+═══════════════════════════════════════ */
+.routes-section{padding:5.5rem 2.5rem;background:var(--sand);}
+.routes-inner{max-width:1320px;margin:0 auto;}
+.section-label{
+  font-size:.68rem;font-weight:700;letter-spacing:3.5px;
+  text-transform:uppercase;color:var(--red);margin-bottom:.5rem;
+}
+.section-heading{
+  font-family:'Libre Baskerville',serif;
+  font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:700;
+  margin-bottom:.5rem;
+}
+.section-heading em{font-style:italic;color:var(--red);}
+.section-sub{color:var(--muted);font-size:.92rem;line-height:1.7;max-width:520px;margin-bottom:3rem;font-weight:400;}
+
+.routes-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(310px,1fr));
+  gap:1.2rem;
+}
+.rc{
+  background:var(--white);border:1px solid var(--border);
+  overflow:hidden;position:relative;cursor:pointer;
+  transition:transform .3s,box-shadow .3s,border-color .3s;
+}
+.rc:hover{transform:translateY(-6px);box-shadow:var(--shadow-md);border-color:var(--red);}
+.rc-img{height:190px;position:relative;overflow:hidden;}
+.rc-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s;}
+.rc:hover .rc-img img{transform:scale(1.06);}
+.rc-img::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(11,19,32,.7) 0%,transparent 55%);
+}
+.rc-badge{
+  position:absolute;top:.8rem;left:.8rem;z-index:2;
+  background:var(--red);color:#fff;
+  padding:.2rem .65rem;font-size:.6rem;font-weight:700;
+  text-transform:uppercase;letter-spacing:1.5px;
+}
+.rc-flag{
+  position:absolute;bottom:.8rem;left:.9rem;z-index:2;
+  font-family:'Libre Baskerville',serif;font-size:1rem;font-weight:700;color:#fff;
+}
+.rc-country{
+  position:absolute;bottom:.8rem;left:.9rem;z-index:2;
+  font-size:.62rem;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:1.5px;
+  margin-top:.2rem;
+}
+.rc-body{padding:1.1rem 1.2rem;}
+.rc-route-name{
+  font-weight:700;font-size:.95rem;color:var(--ink);
+  display:flex;align-items:center;gap:.5rem;margin-bottom:.6rem;
+}
+.rc-arrow{color:var(--red);font-size:1rem;}
+.rc-chips{display:flex;gap:.4rem;flex-wrap:wrap;margin-bottom:.8rem;}
+.rc-chip{
+  background:var(--sand2);color:var(--ink3);
+  padding:.18rem .55rem;font-size:.6rem;font-weight:600;
+  text-transform:uppercase;letter-spacing:1px;
+}
+.rc-price-row{display:flex;align-items:baseline;gap:.3rem;margin-bottom:.2rem;}
+.rc-from{font-size:.62rem;color:var(--muted);text-transform:uppercase;letter-spacing:1px;}
+.rc-usd{
+  font-family:'Libre Baskerville',serif;
+  font-size:1.8rem;font-weight:700;color:var(--red);line-height:1;
+}
+.rc-sym{font-size:.85rem;color:var(--red);font-weight:700;align-self:flex-start;margin-top:.2rem;}
+.rc-tzs{font-size:.72rem;color:var(--muted);margin-top:.1rem;}
+.rc-actions{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:.9rem 1.2rem;background:var(--sand);
+  border-top:1px solid var(--border);
+}
+.rc-detail{font-size:.7rem;color:var(--muted);}
+.rc-detail strong{color:var(--ink);}
+.btn-rc{
+  background:var(--red);color:#fff;border:none;
+  padding:.5rem 1.2rem;font-size:.68rem;font-weight:700;
+  text-transform:uppercase;letter-spacing:1.5px;cursor:pointer;
+  clip-path:polygon(0 0,100% 0,100% 70%,88% 100%,0 100%);
+  transition:background .25s;
+}
+.btn-rc:hover{background:var(--red2);}
+
+/* ═══════════════════════════════════════
+   INFO STRIP
+═══════════════════════════════════════ */
+.info-strip{
+  background:var(--ink);
+  display:grid;grid-template-columns:repeat(4,1fr);
+}
+.info-item{
+  padding:2.2rem 2rem;border-right:1px solid rgba(255,255,255,.08);
+  text-align:center;
+}
+.info-item:last-child{border-right:none;}
+.info-num{
+  font-family:'Libre Baskerville',serif;
+  font-size:2.2rem;font-weight:700;color:var(--gold2);line-height:1;
+}
+.info-lbl{
+  font-size:.68rem;text-transform:uppercase;letter-spacing:2px;
+  color:rgba(255,255,255,.45);margin-top:.4rem;
+}
+
+/* ═══════════════════════════════════════
+   FOOTER
+═══════════════════════════════════════ */
+footer{
+  background:var(--ink2);color:rgba(255,255,255,.5);
+  padding:2.5rem;text-align:center;font-size:.8rem;
+}
+footer strong{color:rgba(255,255,255,.85);}
+
+/* ═══════════════════════════════════════
+   BOOKING MODAL
+═══════════════════════════════════════ */
+.overlay{
+  display:none;position:fixed;inset:0;
+  background:rgba(11,19,32,.82);z-index:600;
+  align-items:flex-start;justify-content:center;
+  padding:1.5rem;overflow-y:auto;backdrop-filter:blur(4px);
+}
+.overlay.open{display:flex;}
+.modal{
+  background:var(--white);max-width:980px;width:100%;
+  margin:auto;position:relative;
+  box-shadow:var(--shadow-lg);
+}
+
+/* Modal Header */
+.modal-hd{
+  background:var(--ink);padding:1.6rem 2rem;
+  position:sticky;top:0;z-index:20;
+}
+.modal-hd h2{
+  font-family:'Libre Baskerville',serif;
+  color:#fff;font-size:1.35rem;font-weight:700;
+}
+.modal-hd p{color:rgba(255,255,255,.5);font-size:.78rem;margin-top:.2rem;}
+.modal-close{
+  position:absolute;top:1.1rem;right:1.3rem;
+  background:rgba(255,255,255,.1);border:none;color:#fff;
+  width:32px;height:32px;cursor:pointer;font-size:1.2rem;
+  display:flex;align-items:center;justify-content:center;
+  transition:background .2s;
+}
+.modal-close:hover{background:rgba(255,255,255,.2);}
+.modal-bd{padding:2rem;}
+
+/* Stepper */
+.stepper{display:flex;gap:0;margin-bottom:2rem;}
+.stp{
+  flex:1;display:flex;flex-direction:column;align-items:center;
+  position:relative;
+}
+.stp:not(:last-child)::after{
+  content:'';position:absolute;top:14px;left:55%;width:90%;
+  height:2px;background:var(--border);z-index:0;
+}
+.stp.done:not(:last-child)::after{background:var(--red);}
+.stp-num{
+  width:28px;height:28px;border-radius:50%;
+  border:2px solid var(--border);background:var(--white);
+  display:flex;align-items:center;justify-content:center;
+  font-size:.7rem;font-weight:700;color:var(--muted);
+  position:relative;z-index:1;transition:all .3s;
+}
+.stp.active .stp-num{border-color:var(--red);background:var(--red);color:#fff;}
+.stp.done .stp-num{border-color:var(--red);background:var(--red);color:#fff;}
+.stp-lbl{font-size:.63rem;font-weight:600;text-transform:uppercase;letter-spacing:1px;color:var(--muted);margin-top:.4rem;}
+.stp.active .stp-lbl{color:var(--red);}
+
+/* Summary bar */
+.bk-summary{
+  background:var(--sand);border-left:3px solid var(--red);
+  padding:.9rem 1.3rem;margin-bottom:1.5rem;
+  display:flex;gap:2rem;flex-wrap:wrap;
+}
+.bk-s-item{font-size:.78rem;color:var(--muted);line-height:1.6;}
+.bk-s-item strong{display:block;color:var(--ink);font-size:.88rem;}
+
+/* ── SEAT MAP ── */
+.seat-section-title{
+  font-size:.78rem;font-weight:700;text-transform:uppercase;
+  letter-spacing:1.5px;color:var(--ink);margin-bottom:1rem;
+  padding-bottom:.6rem;border-bottom:2px solid var(--sand2);
+  display:flex;align-items:center;gap:.7rem;
+}
+.seat-section-title span{
+  background:var(--red);color:#fff;
+  padding:.15rem .6rem;font-size:.62rem;letter-spacing:1px;
+}
+.aircraft-shell{
+  background:var(--sand);border:1px solid var(--border);
+  padding:1.5rem;margin-bottom:1.5rem;
+}
+.plane-front{
+  text-align:center;font-size:.62rem;color:var(--muted);
+  text-transform:uppercase;letter-spacing:2px;
+  margin-bottom:1rem;
+  display:flex;align-items:center;justify-content:center;gap:.6rem;
+}
+.plane-front::before,.plane-front::after{content:'';flex:1;height:1px;background:var(--border);}
+.col-labels{
+  display:grid;grid-template-columns:26px 1fr 1fr 26px 1fr 1fr;
+  gap:.4rem;max-width:340px;margin:0 auto .5rem;
+  text-align:center;font-size:.62rem;font-weight:700;
+  color:var(--muted);text-transform:uppercase;letter-spacing:1px;
+}
+.seat-rows{max-width:340px;margin:0 auto;}
+.seat-row{
+  display:grid;grid-template-columns:26px 1fr 1fr 26px 1fr 1fr;
+  gap:.4rem;margin-bottom:.4rem;align-items:center;
+}
+.row-label{
+  font-size:.62rem;color:var(--muted);font-weight:700;
+  text-align:center;line-height:1;
+}
+.seat{
+  aspect-ratio:1;border:1.5px solid #c8cdd5;
+  background:var(--white);font-size:.62rem;font-weight:700;
+  cursor:pointer;transition:all .18s;border-radius:3px 3px 5px 5px;
+  color:var(--muted);display:flex;align-items:center;justify-content:center;
+}
+.seat:hover:not(.taken):not(.selected){
+  border-color:var(--red);background:rgba(192,40,31,.07);color:var(--red);
+}
+.seat.taken{
+  background:#f0eee8;border-color:#d8d4cc;color:#bbb;
+  cursor:not-allowed;
+}
+.seat.selected{
+  background:var(--red);border-color:var(--red);color:#fff;
+}
+.seat.premium{border-color:var(--gold);}
+.seat-aisle{background:transparent;border:none;cursor:default;}
+.seat-legend{
+  display:flex;justify-content:center;gap:1.5rem;
+  margin-top:1rem;font-size:.7rem;color:var(--muted);flex-wrap:wrap;
+}
+.leg-item{display:flex;align-items:center;gap:.4rem;}
+.leg-box{
+  width:13px;height:13px;border:1.5px solid #c8cdd5;
+  border-radius:2px;background:var(--white);
+}
+
+/* ── FORM ── */
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+.fg{display:flex;flex-direction:column;gap:.3rem;margin-bottom:.85rem;}
+.fg label{
+  font-size:.63rem;font-weight:700;text-transform:uppercase;
+  letter-spacing:1.8px;color:var(--muted);
+}
+.fg input,.fg select{
+  border:1.5px solid var(--border);background:var(--sand);
+  padding:.75rem 1rem;color:var(--ink);font-size:.9rem;
+  outline:none;transition:border-color .25s,background .25s;
+}
+.fg input:focus,.fg select:focus{border-color:var(--red);background:#fff;}
+.fg select{
+  appearance:none;-webkit-appearance:none;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='7'%3E%3Cpath fill='%237a8899' d='M5.5 7L0 0h11z'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 12px center;
+  background-color:var(--sand);padding-right:2.5rem;
+}
+.pax-block{
+  border:1.5px solid var(--border);
+  margin-bottom:1.1rem;overflow:hidden;
+}
+.pax-block-hd{
+  background:var(--sand);padding:.75rem 1.1rem;
+  font-size:.73rem;font-weight:700;text-transform:uppercase;
+  letter-spacing:1.5px;color:var(--red);
+  border-bottom:1px solid var(--border);
+}
+.pax-block-body{padding:1.1rem;}
+
+/* Price summary */
+.price-table{width:100%;border-collapse:collapse;margin:1rem 0;}
+.price-table td{
+  padding:.6rem .4rem;border-bottom:1px solid var(--sand2);
+  font-size:.86rem;color:var(--ink2);
+}
+.price-table td:last-child{text-align:right;font-weight:600;}
+.price-table tr.total-row td{
+  font-size:1.05rem;font-weight:700;color:var(--red);
+  border-top:2px solid var(--ink);border-bottom:none;
+  padding-top:.85rem;
+}
+
+/* Buttons */
+.btn-row{display:flex;gap:.8rem;margin-top:1.8rem;}
+.btn{
+  flex:1;padding:.88rem 1.5rem;border:none;
+  font-size:.78rem;font-weight:700;text-transform:uppercase;
+  letter-spacing:1.5px;cursor:pointer;transition:all .25s;
+}
+.btn-primary{
+  background:var(--red);color:#fff;
+  clip-path:polygon(0 0,100% 0,100% 72%,94% 100%,0 100%);
+}
+.btn-primary:hover{background:var(--red2);}
+.btn-ghost{
+  background:var(--white);color:var(--ink3);
+  border:1.5px solid var(--border);flex:.5;
+}
+.btn-ghost:hover{border-color:var(--ink);color:var(--ink);}
+.btn-wa{
+  background:#25D366;color:#fff;
+  clip-path:polygon(0 0,100% 0,100% 72%,94% 100%,0 100%);
+}
+.btn-wa:hover{background:#1ebe5a;}
+
+/* Confirmation */
+.confirm-wrap{text-align:center;padding:2.5rem 1rem;}
+.confirm-tick{
+  width:72px;height:72px;background:rgba(37,211,102,.1);
+  border-radius:50%;display:flex;align-items:center;justify-content:center;
+  margin:0 auto 1.3rem;font-size:2rem;color:#25D366;
+}
+.confirm-wrap h3{
+  font-family:'Libre Baskerville',serif;font-size:1.6rem;
+  font-weight:700;color:var(--ink);margin-bottom:.5rem;
+}
+.confirm-ref{
+  display:inline-block;background:var(--sand);
+  padding:.5rem 1.5rem;font-size:1rem;font-weight:700;
+  color:var(--red);letter-spacing:3px;margin:1rem 0;
+}
+.confirm-wrap p{color:var(--muted);line-height:1.75;font-size:.88rem;}
+
+/* ── RESPONSIVE ── */
+@media(max-width:1000px){
+  .search-fields{grid-template-columns:1fr 1fr;gap:.8rem;}
+  .btn-search{grid-column:span 2;}
+  .fc-main{grid-template-columns:1fr auto;}
+  .info-strip{grid-template-columns:repeat(2,1fr);}
+}
+@media(max-width:700px){
+  .nav-links a:not(.nav-cta){display:none;}
+  .hero h1.hero-heading{font-size:2.3rem;}
+  .search-fields{grid-template-columns:1fr;}
+  .btn-search{grid-column:auto;}
+  .routes-grid{grid-template-columns:1fr;}
+  .form-grid{grid-template-columns:1fr;}
+  .info-strip{grid-template-columns:1fr 1fr;}
+  .fc-main{grid-template-columns:1fr;gap:1rem;}
+  .search-bar{padding:1.3rem 1.2rem 1.5rem;}
+  .modal-bd{padding:1.2rem;}
+}
+</style>
+</head>
+<body>
+
+<!-- ═══ NAV ═══ -->
+<nav id="nav">
+  <div class="nav-inner">
+    <a class="logo" href="#">
+      <div class="logo-mark">
+        <svg viewBox="0 0 24 24"><path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/></svg>
+      </div>
+      <div class="logo-wordmark">
+        <div class="logo-name">Precision Air</div>
+        <span class="logo-tagline">Tanzania's Airline · Est. 1993</span>
+      </div>
+    </a>
+    <div class="nav-links">
+      <a href="#routes">Destinations</a>
+      <a href="#about">About</a>
+      <a href="#" class="nav-cta" id="navBook">Book Now</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<div class="hero">
+  <div class="hero-media">
+    <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1920&auto=format&fit=crop&q=80" alt="Aerial view Tanzania">
+  </div>
+  <div class="hero-content">
+    <div class="hero-text">
+      <div class="hero-eyebrow">Tanzania's Leading Airline</div>
+      <h1 class="hero-heading">Fly to Your<br><em>Next Adventure</em></h1>
+      <p class="hero-sub">Connecting Dar es Salaam to every corner of Tanzania and beyond — with reliability, warmth and pride.</p>
+      <div class="hero-badges">
+        <div class="hero-badge">14 Destinations</div>
+        <div class="hero-badge">IATA Certified</div>
+        <div class="hero-badge">23kg Free Baggage</div>
+        <div class="hero-badge">ATR 72 / 42 Fleet</div>
+      </div>
+    </div>
+
+    <!-- SEARCH -->
+    <div class="search-bar">
+      <div class="trip-tabs">
+        <button class="trip-tab active" id="tabOW" onclick="setTrip('ow')">One Way</button>
+        <button class="trip-tab" id="tabRT" onclick="setTrip('rt')">Round Trip</button>
+      </div>
+      <div class="search-fields">
+        <div class="sf-group">
+          <div class="sf-label">From</div>
+          <select id="sFrom"></select>
+        </div>
+        <div class="sf-group">
+          <div class="sf-label">To</div>
+          <select id="sTo"></select>
+        </div>
+        <div class="sf-group">
+          <div class="sf-label">Departure</div>
+          <input type="date" id="sDep">
+        </div>
+        <div class="sf-group">
+          <div class="sf-label">Passengers</div>
+          <select id="sPax">
+            <option value="1">1 Passenger</option>
+            <option value="2">2 Passengers</option>
+            <option value="3">3 Passengers</option>
+            <option value="4">4 Passengers</option>
+            <option value="5">5 Passengers</option>
+          </select>
+        </div>
+        <button class="btn-search" onclick="doSearch()">Search →</button>
+      </div>
+      <div class="return-fields" id="retFields">
+        <div class="sf-group">
+          <div class="sf-label">Return Date</div>
+          <input type="date" id="sRet">
+        </div>
+        <div class="sf-group" style="display:flex;align-items:flex-end;padding-bottom:.05rem;">
+          <p style="font-size:.73rem;color:var(--muted);line-height:1.6;padding:.3rem 0;">Round-trip fares are per person per direction. Return price calculated at same base fare.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ RESULTS ═══ -->
+<div class="results-wrap" id="resultsWrap">
+  <div class="results-head">
+    <h2 id="resultsTitle">Available Flights</h2>
+    <span class="results-meta" id="resultsMeta"></span>
+  </div>
+  <div id="flightCards"></div>
+</div>
+
+<!-- ═══ ROUTES SECTION ═══ -->
+<section class="routes-section" id="routes">
+  <div class="routes-inner">
+    <div class="section-label">Our Network</div>
+    <h2 class="section-heading">All Routes &amp; <em>Fares</em></h2>
+    <p class="section-sub">Exact prices sourced from precisionairtz.com — no hidden fees, no surprises. Book directly via WhatsApp confirmation.</p>
+    <div class="routes-grid" id="routesGrid"></div>
+  </div>
+</section>
+
+<!-- ═══ INFO STRIP ═══ -->
+<div class="info-strip" id="about">
+  <div class="info-item"><div class="info-num">14</div><div class="info-lbl">Destinations Served</div></div>
+  <div class="info-item"><div class="info-num">1993</div><div class="info-lbl">Founded in Dar es Salaam</div></div>
+  <div class="info-item"><div class="info-num">9</div><div class="info-lbl">ATR Aircraft in Fleet</div></div>
+  <div class="info-item"><div class="info-num">IATA</div><div class="info-lbl">Safety Certified Airline</div></div>
+</div>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <p style="font-family:'Libre Baskerville',serif;font-size:1.1rem;font-weight:700;color:rgba(255,255,255,.8);margin-bottom:.4rem;">Precision Air Services PLC</p>
+  <p>Julius Nyerere International Airport, Dar es Salaam, Tanzania &nbsp;·&nbsp; <strong>+255 784 772 823</strong></p>
+  <p style="margin-top:.3rem;">Diamond Plaza, 1st Floor, Mirambo Street, Samora Ave</p>
+  <p style="margin-top:1.2rem;font-size:.7rem;opacity:.4;">© 2026 Precision Air Services PLC. All rights reserved. Fares from precisionairtz.com.</p>
+</footer>
+
+<!-- ═══ BOOKING MODAL ═══ -->
+<div class="overlay" id="overlay">
+  <div class="modal" id="modal">
+    <div class="modal-hd">
+      <h2>Reserve Your Flight</h2>
+      <p id="modalSub">Precision Air · Secure Booking</p>
+      <button class="modal-close" onclick="closeModal()">✕</button>
+    </div>
+    <div class="modal-bd">
+      <div class="stepper" id="stepper">
+        <div class="stp active" id="st1"><div class="stp-num">1</div><div class="stp-lbl">Seats</div></div>
+        <div class="stp" id="st2"><div class="stp-num">2</div><div class="stp-lbl">Passengers</div></div>
+        <div class="stp" id="st3"><div class="stp-num">3</div><div class="stp-lbl">Review</div></div>
+      </div>
+      <div id="modalContent"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ══════════════════════════════════════
+   DATA  —  exact fares from precisionairtz.com
+══════════════════════════════════════ */
+const TZS_RATE = 2605;
+
+const ROUTES = [
+  // FROM precisionairtz.com homepage fare table
+  {from:'Dar es Salaam',fc:'DAR',to:'Nairobi',      tc:'NBO',tzs:320000,usd:null, dep:'07:30',arr:'09:10',dur:'1h 40m',ac:'ATR 72',intl:true,  badge:'International'},
+  {from:'Dar es Salaam',fc:'DAR',to:'Zanzibar',     tc:'ZNZ',tzs:90000, usd:null, dep:'08:00',arr:'08:30',dur:'30m',   ac:'ATR 42',intl:false, badge:'Most Popular'},
+  {from:'Dar es Salaam',fc:'DAR',to:'Kilimanjaro',  tc:'JRO',tzs:150000,usd:null, dep:'06:00',arr:'07:30',dur:'1h 30m',ac:'ATR 72',intl:false, badge:'Safari'},
+  {from:'Dar es Salaam',fc:'DAR',to:'Mwanza',       tc:'MWZ',tzs:200000,usd:null, dep:'09:00',arr:'11:00',dur:'2h 00m',ac:'ATR 72',intl:false, badge:'Lake Victoria'},
+  {from:'Dar es Salaam',fc:'DAR',to:'Mtwara',       tc:'MYW',tzs:150000,usd:null, dep:'10:30',arr:'11:45',dur:'1h 15m',ac:'ATR 42',intl:false, badge:'Southern'},
+  {from:'Dar es Salaam',fc:'DAR',to:'Kahama',       tc:'KHM',tzs:230000,usd:null, dep:'13:00',arr:'15:00',dur:'2h 00m',ac:'ATR 72',intl:false, badge:'Gold Mining'},
+  {from:'Dar es Salaam',fc:'DAR',to:'Mbeya',        tc:'MBI',tzs:180000,usd:null, dep:'06:30',arr:'08:00',dur:'1h 30m',ac:'ATR 42',intl:false, badge:'Highlands'},
+  {from:'Dar es Salaam',fc:'DAR',to:'Bukoba',       tc:'BKZ',tzs:270000,usd:null, dep:'09:30',arr:'12:00',dur:'2h 30m',ac:'ATR 72',intl:false, badge:'Lake District'},
+  {from:'Dar es Salaam',fc:'DAR',to:'Seronera',     tc:'SEU',tzs:null,  usd:275,  dep:'06:00',arr:'07:30',dur:'1h 30m',ac:'ATR 42',intl:false, badge:'Serengeti'},
+  {from:'Dar es Salaam',fc:'DAR',to:'Dodoma',       tc:'DOD',tzs:130000,usd:null, dep:'11:00',arr:'12:00',dur:'1h 00m',ac:'ATR 42',intl:false, badge:'Capital City'},
+  {from:'Dar es Salaam',fc:'DAR',to:'Iringa',       tc:'IRI',tzs:160000,usd:null, dep:'07:00',arr:'08:15',dur:'1h 15m',ac:'ATR 42',intl:false, badge:'Southern Highlands'},
+  {from:'Arusha',       fc:'ARK',to:'Zanzibar',     tc:'ZNZ',tzs:240000,usd:null, dep:'08:00',arr:'09:30',dur:'1h 30m',ac:'ATR 72',intl:false, badge:''},
+  {from:'Arusha',       fc:'ARK',to:'Dar es Salaam',tc:'DAR',tzs:150000,usd:null, dep:'10:00',arr:'11:30',dur:'1h 30m',ac:'ATR 72',intl:false, badge:''},
+  {from:'Arusha',       fc:'ARK',to:'Mwanza',       tc:'MWZ',tzs:130000,usd:null, dep:'14:00',arr:'15:30',dur:'1h 30m',ac:'ATR 42',intl:false, badge:''},
+  {from:'Mwanza',       fc:'MWZ',to:'Bukoba',       tc:'BKZ',tzs:99000, usd:null, dep:'07:00',arr:'07:45',dur:'45m',   ac:'ATR 42',intl:false, badge:'Shortest Route'},
+  {from:'Mwanza',       fc:'MWZ',to:'Dar es Salaam',tc:'DAR',tzs:200000,usd:null, dep:'12:00',arr:'14:00',dur:'2h 00m',ac:'ATR 72',intl:false, badge:''},
+  {from:'Zanzibar',     fc:'ZNZ',to:'Dar es Salaam',tc:'DAR',tzs:90000, usd:null, dep:'09:00',arr:'09:30',dur:'30m',   ac:'ATR 42',intl:false, badge:'Spice Islands'},
+  {from:'Zanzibar',     fc:'ZNZ',to:'Kilimanjaro',  tc:'JRO',tzs:200000,usd:null, dep:'11:00',arr:'12:30',dur:'1h 30m',ac:'ATR 72',intl:false, badge:''},
+  {from:'Kilimanjaro',  fc:'JRO',to:'Dar es Salaam',tc:'DAR',tzs:150000,usd:null, dep:'08:00',arr:'09:30',dur:'1h 30m',ac:'ATR 72',intl:false, badge:''},
+  {from:'Kilimanjaro',  fc:'JRO',to:'Zanzibar',     tc:'ZNZ',tzs:200000,usd:null, dep:'13:00',arr:'14:30',dur:'1h 30m',ac:'ATR 72',intl:false, badge:''},
+  {from:'Nairobi',      fc:'NBO',to:'Dar es Salaam',tc:'DAR',tzs:320000,usd:null, dep:'10:30',arr:'12:10',dur:'1h 40m',ac:'ATR 72',intl:true,  badge:'Kenya Route'},
+];
+
+// Compute missing USD/TZS
+ROUTES.forEach(r=>{
+  if(r.tzs && !r.usd) r.usd = Math.round(r.tzs/TZS_RATE);
+  if(r.usd && !r.tzs) r.tzs = Math.round(r.usd*TZS_RATE);
+});
+
+const CITIES = [...new Set(ROUTES.flatMap(r=>[r.from,r.to]))].sort();
+
+/* destination images (Unsplash exact match) */
+const IMGS = {
+  'Zanzibar':      'https://images.unsplash.com/photo-1586861635167-e5223aadc9fe?w=700&auto=format&fit=crop&q=80',
+  'Kilimanjaro':   'https://images.unsplash.com/photo-1621414050941-13db8d62048c?w=700&auto=format&fit=crop&q=80',
+  'Nairobi':       'https://images.unsplash.com/photo-1611348586755-53860f690a7b?w=700&auto=format&fit=crop&q=80',
+  'Seronera':      'https://images.unsplash.com/photo-1516426122078-c23e76319801?w=700&auto=format&fit=crop&q=80',
+  'Mwanza':        'https://images.unsplash.com/photo-1574160093049-f2a9af67c22a?w=700&auto=format&fit=crop&q=80',
+  'Arusha':        'https://images.unsplash.com/photo-1586184671012-2fd25e65b3e1?w=700&auto=format&fit=crop&q=80',
+  'Dar es Salaam': 'https://images.unsplash.com/photo-1589825743636-e4a8d8fe5c8c?w=700&auto=format&fit=crop&q=80',
+  'Bukoba':        'https://images.unsplash.com/photo-1580060839134-75a5edca2e99?w=700&auto=format&fit=crop&q=80',
+  'Mbeya':         'https://images.unsplash.com/photo-1589308078059-be1415eab4c3?w=700&auto=format&fit=crop&q=80',
+  'Mtwara':        'https://images.unsplash.com/photo-1510797215324-95aa89f43c33?w=700&auto=format&fit=crop&q=80',
+  'Kahama':        'https://images.unsplash.com/photo-1565177980940-b4a2b13bc76a?w=700&auto=format&fit=crop&q=80',
+  'Dodoma':        'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=700&auto=format&fit=crop&q=80',
+  'Iringa':        'https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=700&auto=format&fit=crop&q=80',
+};
+
+const COUNTRIES = {
+  'Nairobi':'Kenya','Zanzibar':'Tanzania · Spice Islands',
+  'Kilimanjaro':'Tanzania · Northern','Seronera':'Tanzania · Serengeti NP',
+  'Mwanza':'Tanzania · Lake Victoria','Arusha':'Tanzania · Northern',
+  'Dar es Salaam':'Tanzania · East Coast','Bukoba':'Tanzania · Lake Victoria',
+  'Mbeya':'Tanzania · Southern Highlands','Mtwara':'Tanzania · Southern Coast',
+  'Kahama':'Tanzania · Shinyanga Region','Dodoma':'Tanzania · Capital',
+  'Iringa':'Tanzania · Southern Highlands',
+};
+
+/* ══ STATE ══ */
+let tripType='ow';
+let bk={route:null,retRoute:null,pax:1,depDate:'',retDate:'',outSeats:[],retSeats:[],paxInfo:[],step:1};
+const TAKEN_SEATS=[3,7,12,18,25,31,36];
+
+/* ══ INIT ══ */
+window.addEventListener('DOMContentLoaded',()=>{
+  const today=new Date().toISOString().split('T')[0];
+  document.getElementById('sDep').min=today;
+  document.getElementById('sDep').value=today;
+  document.getElementById('sRet').min=today;
+  populateSelects();
+  renderRouteCards();
+  document.getElementById('navBook').addEventListener('click',e=>{e.preventDefault();openDirectModal();});
+});
+
+window.addEventListener('scroll',()=>{
+  document.getElementById('nav').classList.toggle('scrolled',window.scrollY>60);
+});
+
+function populateSelects(){
+  ['sFrom','sTo'].forEach(id=>{
+    const el=document.getElementById(id);
+    CITIES.forEach(c=>{el.innerHTML+=`<option>${c}</option>`;});
+  });
+  document.getElementById('sTo').value='Zanzibar';
+}
+
+function setTrip(t){
+  tripType=t;
+  document.getElementById('tabOW').classList.toggle('active',t==='ow');
+  document.getElementById('tabRT').classList.toggle('active',t==='rt');
+  document.getElementById('retFields').classList.toggle('show',t==='rt');
+}
+
+/* ══ SEARCH ══ */
+function doSearch(){
+  const from=document.getElementById('sFrom').value;
+  const to=document.getElementById('sTo').value;
+  const dep=document.getElementById('sDep').value;
+  const pax=+document.getElementById('sPax').value;
+  const ret=document.getElementById('sRet').value;
+  if(from===to){alert('Please select different origin and destination.');return;}
+  bk.pax=pax; bk.depDate=dep; bk.retDate=ret;
+  const found=ROUTES.filter(r=>r.from===from&&r.to===to);
+  const retFound=tripType==='rt'?ROUTES.filter(r=>r.from===to&&r.to===from):[];
+  const wrap=document.getElementById('resultsWrap');
+  const cards=document.getElementById('flightCards');
+  wrap.classList.add('show');
+  document.getElementById('resultsTitle').textContent=`${from} → ${to}`;
+  document.getElementById('resultsMeta').textContent=
+    found.length?`${found.length} flight${found.length>1?'s':''} available · ${dep}`:
+    'No direct flights on this route';
+  if(!found.length){
+    cards.innerHTML=`<div style="text-align:center;padding:3rem;color:var(--muted);">
+      <p style="font-size:1.05rem;margin-bottom:.5rem;color:var(--ink);">No direct flights found</p>
+      <p>Try a different route or browse all routes below.</p></div>`;
+  } else {
+    cards.innerHTML=found.map(r=>flightCardHTML(r,dep,pax,retFound[0]||null,ret)).join('');
+  }
+  wrap.scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+function flightCardHTML(r,dep,pax,ret,retDate){
+  const totalUSD=r.usd*pax+(ret?ret.usd*pax:0);
+  const totalTZS=r.tzs*pax+(ret?ret.tzs*pax:0);
+  return`<div class="fc">
+    <div class="fc-main">
+      <div class="fc-airline">
+        <div class="fc-airline-logo"><svg viewBox="0 0 24 24"><path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/></svg></div>
+        <div class="fc-airline-info"><div class="fc-airline-name">Precision Air</div><div class="fc-aircraft">PW · ${r.ac}</div></div>
+      </div>
+      <div class="fc-route">
+        <div class="fc-point"><div class="fc-time">${r.dep}</div><div class="fc-code">${r.fc}</div><div class="fc-city">${r.from}</div></div>
+        <div class="fc-via">
+          <div class="fc-dur">${r.dur}</div>
+          <div class="fc-line"></div>
+          <div class="fc-plane"><svg viewBox="0 0 24 24" width="16" height="16" fill="var(--red)"><path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/></svg></div>
+          <div class="fc-nonstop">Non-stop</div>
+        </div>
+        <div class="fc-point"><div class="fc-time">${r.arr}</div><div class="fc-code">${r.tc}</div><div class="fc-city">${r.to}</div></div>
+      </div>
+      <div class="fc-price">
+        <div class="fc-price-usd">$${r.usd}</div>
+        <div class="fc-price-tzs">TZS ${r.tzs.toLocaleString()}</div>
+        <div class="fc-per">per person${pax>1?` · ${pax} pax: <strong>$${totalUSD}</strong>`:''}</div>
+      </div>
+      <button class="btn-select" onclick='startBook(${JSON.stringify(r)},${JSON.stringify(ret)})'>Select →</button>
+    </div>
+    <div class="fc-footer">
+      <div class="fc-tag">📅 <strong>${dep||'—'}</strong></div>
+      <div class="fc-tag">🧳 <strong>23kg</strong> free checked baggage</div>
+      <div class="fc-tag">☕ Complimentary refreshments</div>
+      <div class="fc-tag">✔ Economy class included</div>
+      ${ret?`<div class="fc-tag">↩ Return ${ret.dep}–${ret.arr} on ${retDate} included</div>`:''}
+    </div>
+  </div>`;
+}
+
+/* ══ ROUTE CARDS ══ */
+function renderRouteCards(){
+  const grid=document.getElementById('routesGrid');
+  grid.innerHTML=ROUTES.map(r=>{
+    const img=IMGS[r.to]||IMGS['Dar es Salaam'];
+    const country=COUNTRIES[r.to]||'Tanzania';
+    return`<div class="rc" onclick='startBook(${JSON.stringify(r)},null)'>
+      <div class="rc-img">
+        <img src="${img}" alt="${r.to}" loading="lazy">
+        ${r.badge?`<div class="rc-badge">${r.badge}</div>`:''}
+        <div style="position:absolute;bottom:.8rem;left:.9rem;z-index:2;">
+          <div style="font-size:.6rem;color:rgba(255,255,255,.65);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:.2rem;">${country}</div>
+          <div style="font-family:'Libre Baskerville',serif;font-size:1.05rem;font-weight:700;color:#fff;">${r.to}</div>
+        </div>
+      </div>
+      <div class="rc-body">
+        <div class="rc-route-name">
+          <span>${r.from}</span>
+          <span class="rc-arrow">→</span>
+          <span>${r.to}</span>
+        </div>
+        <div class="rc-chips">
+          <div class="rc-chip">Direct</div>
+          <div class="rc-chip">${r.ac}</div>
+          <div class="rc-chip">${r.dur}</div>
+          ${r.intl?'<div class="rc-chip">International</div>':''}
+        </div>
+        <div class="rc-price-row">
+          <span class="rc-sym">$</span>
+          <span class="rc-usd">${r.usd}</span>
+        </div>
+        <div style="font-size:.62rem;color:var(--muted);margin-top:.1rem;">TZS ${r.tzs.toLocaleString()} · per person · one way</div>
+      </div>
+      <div class="rc-actions">
+        <div class="rc-detail">⏱ ${r.dep} – ${r.arr} · <strong>Daily</strong></div>
+        <button class="btn-rc" onclick="event.stopPropagation();startBook(${JSON.stringify(r)},null)">Book →</button>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+/* ══ OPEN MODAL ══ */
+function openDirectModal(){
+  if(!bk.route){const r=ROUTES[0];startBook(r,null);}
+  else{openModal();}
+}
+function startBook(route,retRoute){
+  bk.route=route;
+  bk.retRoute=retRoute;
+  bk.outSeats=[];
+  bk.retSeats=[];
+  bk.paxInfo=Array.from({length:bk.pax},()=>({name:'',passport:'',dob:'',nationality:'',phone:'',email:''}));
+  bk.step=1;
+  document.getElementById('modalSub').textContent=`${route.from} → ${route.to} · Economy · ${bk.pax} Pax`;
+  openModal();
+  renderModal();
+}
+function openModal(){document.getElementById('overlay').classList.add('open');}
+function closeModal(){document.getElementById('overlay').classList.remove('open');}
+
+/* ══ STEPPER ══ */
+function syncStepper(){
+  for(let i=1;i<=3;i++){
+    const el=document.getElementById('st'+i);
+    el.classList.remove('active','done');
+    if(i<bk.step) el.classList.add('done');
+    if(i===bk.step) el.classList.add('active');
+  }
+}
+
+function renderModal(){
+  syncStepper();
+  const c=document.getElementById('modalContent');
+  if(bk.step===1) c.innerHTML=renderStep1();
+  else if(bk.step===2) c.innerHTML=renderStep2();
+  else c.innerHTML=renderStep3();
+}
+
+/* ══ STEP 1 — SEAT SELECTION ══ */
+function renderStep1(){
+  return`
+    <div class="bk-summary">
+      <div class="bk-s-item"><strong>${bk.route.from} (${bk.route.fc}) → ${bk.route.to} (${bk.route.tc})</strong>Outbound · ${bk.depDate||'Date TBD'}</div>
+      <div class="bk-s-item"><strong>${bk.route.dep} – ${bk.route.arr}</strong>Flight Duration: ${bk.route.dur}</div>
+      <div class="bk-s-item"><strong>${bk.pax} Passenger${bk.pax>1?'s':''}</strong>Economy Class</div>
+      <div class="bk-s-item"><strong>$${bk.route.usd} / TZS ${bk.route.tzs.toLocaleString()}</strong>Per person</div>
+    </div>
+    <div class="seat-section-title">Select Outbound Seats <span>Choose ${bk.pax}</span></div>
+    ${buildPlane('out')}
+    ${bk.retRoute?`<div class="seat-section-title" style="margin-top:1.5rem;">Select Return Seats <span>Choose ${bk.pax}</span></div>${buildPlane('ret')}`:''}
+    <div class="seat-legend">
+      <div class="leg-item"><div class="leg-box"></div> Available</div>
+      <div class="leg-item"><div class="leg-box" style="background:var(--red);border-color:var(--red);"></div> Selected</div>
+      <div class="leg-item"><div class="leg-box" style="background:#f0eee8;border-color:#d8d4cc;"></div> Taken</div>
+    </div>
+    <div class="btn-row">
+      <button class="btn btn-ghost" onclick="closeModal()">Cancel</button>
+      <button class="btn btn-primary" onclick="goStep2()">Continue: Passenger Details →</button>
+    </div>`;
+}
+
+function buildPlane(dir){
+  const sel=dir==='out'?bk.outSeats:bk.retSeats;
+  let h=`<div class="aircraft-shell">
+    <div class="plane-front">✈ Front of Aircraft · Cockpit</div>
+    <div class="col-labels"><span></span><span>A</span><span>B</span><span></span><span>C</span><span>D</span></div>
+    <div class="seat-rows">`;
+  for(let row=1;row<=10;row++){
+    h+=`<div class="seat-row"><div class="row-label">${row}</div>`;
+    ['A','B','','C','D'].forEach((col,ci)=>{
+      if(!col){h+=`<div class="seat seat-aisle"></div>`;return;}
+      const id=`${row}${col}`;
+      const n=(row-1)*4+(ci<2?ci+1:ci);
+      const taken=TAKEN_SEATS.includes(n);
+      const selected=sel.includes(id);
+      h+=`<div class="seat${taken?' taken':''}${selected?' selected':''}" onclick="toggleSeat('${dir}','${id}')">${id}</div>`;
+    });
+    h+=`</div>`;
+  }
+  h+=`</div></div>`;
+  return h;
+}
+
+function toggleSeat(dir,id){
+  const arr=dir==='out'?bk.outSeats:bk.retSeats;
+  const idx=arr.indexOf(id);
+  const taken=TAKEN_SEATS;
+  const row=parseInt(id);
+  const n=(row-1)*4+(id.endsWith('A')?1:id.endsWith('B')?2:id.endsWith('C')?3:4);
+  if(taken.includes(n)) return;
+  if(idx>=0) arr.splice(idx,1);
+  else if(arr.length<bk.pax) arr.push(id);
+  else{alert(`Maximum ${bk.pax} seat(s). Deselect one first.`);return;}
+  renderModal();
+}
+
+function goStep2(){
+  if(bk.outSeats.length!==bk.pax){alert(`Please select ${bk.pax} outbound seat(s).`);return;}
+  if(bk.retRoute&&bk.retSeats.length!==bk.pax){alert(`Please select ${bk.pax} return seat(s).`);return;}
+  bk.step=2;renderModal();
+}
+
+/* ══ STEP 2 — PASSENGER DETAILS ══ */
+function renderStep2(){
+  const blocks=bk.paxInfo.map((p,i)=>`
+    <div class="pax-block">
+      <div class="pax-block-hd">Passenger ${i+1} · Seat ${bk.outSeats[i]}${bk.retRoute?' / Return: '+bk.retSeats[i]:''}</div>
+      <div class="pax-block-body">
+        <div class="form-grid">
+          <div class="fg"><label>Full Name (as on passport)</label><input type="text" data-i="${i}" data-k="name" value="${p.name}" placeholder="JANE MARY DOE"></div>
+          <div class="fg"><label>Passport / ID Number</label><input type="text" data-i="${i}" data-k="passport" value="${p.passport}" placeholder="AB1234567"></div>
+          <div class="fg"><label>Date of Birth</label><input type="date" data-i="${i}" data-k="dob" value="${p.dob}"></div>
+          <div class="fg"><label>Nationality</label><input type="text" data-i="${i}" data-k="nationality" value="${p.nationality}" placeholder="Tanzanian"></div>
+          <div class="fg"><label>Phone Number</label><input type="tel" data-i="${i}" data-k="phone" value="${p.phone}" placeholder="+255 712 000 000"></div>
+          <div class="fg"><label>Email Address</label><input type="email" data-i="${i}" data-k="email" value="${p.email}" placeholder="you@email.com"></div>
+        </div>
+      </div>
+    </div>`).join('');
+  return blocks+`
+    <div class="btn-row">
+      <button class="btn btn-ghost" onclick="bk.step=1;renderModal()">← Back</button>
+      <button class="btn btn-primary" onclick="savePax()">Review Booking →</button>
+    </div>`;
+}
+
+function savePax(){
+  document.querySelectorAll('[data-k]').forEach(el=>{
+    bk.paxInfo[+el.dataset.i][el.dataset.k]=el.value.trim();
+  });
+  for(const p of bk.paxInfo){
+    if(!p.name||!p.passport||!p.phone){
+      alert('Please complete Name, Passport/ID, and Phone for all passengers.');return;
+    }
+  }
+  bk.step=3;renderModal();
+}
+
+/* ══ STEP 3 — REVIEW & CONFIRM ══ */
+function getTotal(){
+  const out=bk.route.usd*bk.pax;
+  const ret=bk.retRoute?bk.retRoute.usd*bk.pax:0;
+  const outTZS=bk.route.tzs*bk.pax;
+  const retTZS=bk.retRoute?bk.retRoute.tzs*bk.pax:0;
+  return{out,ret,total:out+ret,outTZS,retTZS,totalTZS:outTZS+retTZS};
+}
+
+function renderStep3(){
+  const t=getTotal();
+  const r=bk.route,rr=bk.retRoute;
+  return`
+    <div class="bk-summary">
+      <div class="bk-s-item"><strong>${r.from} → ${r.to}</strong>Outbound · ${bk.depDate||'—'} · ${r.dep}–${r.arr}</div>
+      ${rr?`<div class="bk-s-item"><strong>${rr.from} → ${rr.to}</strong>Return · ${bk.retDate||'—'} · ${rr.dep}–${rr.arr}</div>`:''}
+      <div class="bk-s-item"><strong>${bk.pax} Pax</strong>Economy Class</div>
+    </div>
+    <table class="price-table">
+      <tr><td>Outbound — ${r.from} → ${r.to} (${r.ac})</td><td>$${r.usd} × ${bk.pax}</td></tr>
+      <tr><td>Outbound Seats</td><td>${bk.outSeats.join(', ')}</td></tr>
+      <tr><td>Departure</td><td>${bk.depDate||'—'} at ${r.dep}</td></tr>
+      ${rr?`<tr><td>Return — ${rr.from} → ${rr.to} (${rr.ac})</td><td>$${rr.usd} × ${bk.pax}</td></tr>
+      <tr><td>Return Seats</td><td>${bk.retSeats.join(', ')}</td></tr>
+      <tr><td>Return Date</td><td>${bk.retDate||'—'} at ${rr.dep}</td></tr>`:''}
+      <tr><td>23kg Checked Baggage</td><td>Included</td></tr>
+      <tr><td>Taxes &amp; Fees</td><td>Included</td></tr>
+      <tr class="total-row">
+        <td>Total Amount</td>
+        <td>$${t.total} <span style="font-weight:400;font-size:.72rem;color:var(--muted);">/ TZS ${t.totalTZS.toLocaleString()}</span></td>
+      </tr>
+    </table>
+    ${bk.paxInfo.map((p,i)=>`
+      <div class="pax-block" style="margin-bottom:.7rem;">
+        <div class="pax-block-hd">Passenger ${i+1}</div>
+        <div class="pax-block-body" style="font-size:.84rem;color:var(--ink2);line-height:2;">
+          <strong>${p.name}</strong><br>
+          Nationality: ${p.nationality||'—'} &nbsp;·&nbsp; DOB: ${p.dob||'—'}<br>
+          Passport / ID: ${p.passport} &nbsp;·&nbsp; ${p.phone}${p.email?' &nbsp;·&nbsp; '+p.email:''}
+        </div>
+      </div>`).join('')}
+    <div class="btn-row">
+      <button class="btn btn-ghost" onclick="bk.step=2;renderModal()">← Back</button>
+      <button class="btn btn-wa" onclick="sendWA()">✓ Confirm via WhatsApp</button>
+    </div>
+    <p style="text-align:center;font-size:.7rem;color:var(--muted);margin-top:.8rem;">
+      Your booking will be sent to <strong>+254 103 761 442</strong> via WhatsApp for confirmation and payment.
+    </p>`;
+}
+
+/* ══ WHATSAPP ══ */
+function sendWA(){
+  const t=getTotal();
+  const r=bk.route,rr=bk.retRoute;
+  const ref='PA-'+Date.now().toString().slice(-8).toUpperCase();
+
+  let m='PRECISION AIR BOOKING REQUEST. ';
+  m+=`Reference: ${ref}. `;
+  m+=`OUTBOUND FLIGHT. `;
+  m+=`Route: ${r.from} (${r.fc}) to ${r.to} (${r.tc}). `;
+  m+=`Date: ${bk.depDate||'To be confirmed'}. `;
+  m+=`Departure: ${r.dep}, Arrival: ${r.arr}. `;
+  m+=`Duration: ${r.dur}. Aircraft: ${r.ac}. `;
+  m+=`Seats: ${bk.outSeats.join(', ')}. `;
+  m+=`Fare per person: USD ${r.usd} (TZS ${r.tzs.toLocaleString()}). `;
+  if(rr){
+    m+=`RETURN FLIGHT. `;
+    m+=`Route: ${rr.from} (${rr.fc}) to ${rr.to} (${rr.tc}). `;
+    m+=`Date: ${bk.retDate||'To be confirmed'}. `;
+    m+=`Departure: ${rr.dep}, Arrival: ${rr.arr}. `;
+    m+=`Seats: ${bk.retSeats.join(', ')}. `;
+    m+=`Return fare per person: USD ${rr.usd} (TZS ${rr.tzs.toLocaleString()}). `;
+  }
+  m+=`PASSENGER DETAILS. `;
+  bk.paxInfo.forEach((p,i)=>{
+    m+=`Passenger ${i+1}: ${p.name}. `;
+    m+=`Nationality: ${p.nationality||'Not provided'}. `;
+    m+=`Date of Birth: ${p.dob||'Not provided'}. `;
+    m+=`Passport or ID: ${p.passport}. `;
+    m+=`Phone: ${p.phone}. `;
+    if(p.email) m+=`Email: ${p.email}. `;
+  });
+  m+=`BOOKING SUMMARY. `;
+  m+=`Total Passengers: ${bk.pax}. `;
+  m+=`Class: Economy. Baggage: 23kg free checked baggage included per person. `;
+  m+=`Total Amount: USD ${t.total} (TZS ${t.totalTZS.toLocaleString()}). `;
+  m+=`Please confirm this reservation and provide payment instructions. Thank you for choosing Precision Air.`;
+
+  window.open(`https://wa.me/254103761442?text=${encodeURIComponent(m)}`,'_blank');
+
+  document.getElementById('stepper').style.display='none';
+  document.getElementById('modalContent').innerHTML=`
+    <div class="confirm-wrap">
+      <div class="confirm-tick">✓</div>
+      <h3>Booking Request Sent</h3>
+      <div class="confirm-ref">${ref}</div>
+      <p>Your booking has been submitted to our team at <strong>+254 103 761 442</strong> via WhatsApp.<br>
+      We will confirm your reservation and send payment details shortly.<br><br>
+      Please keep your reference number for tracking.</p>
+      <div class="btn-row" style="max-width:360px;margin:1.5rem auto 0;">
+        <button class="btn btn-primary" onclick="closeModal()">Close</button>
+      </div>
+    </div>`;
+}
+</script>
+</body>
+</html>
