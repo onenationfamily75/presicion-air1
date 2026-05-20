@@ -1,4 +1,10 @@
+# robots.txt — Precision Air Services PLC
+# Domain  : https://www.precisionairtz.site
+# Updated : 2026-05-20
+
 User-agent: *
 Allow: /
 
-Sitemap: https://precisionairtz.site/sitemap.xml
+Sitemap: https://www.precisionairtz.site/sitemap.xml
+
+Host: www.precisionairtz.site
