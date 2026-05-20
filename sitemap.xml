@@ -1,274 +1,239 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml"
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-  <!-- ── CORE PAGES ── -->
-
+  <!-- ── MAIN PAGES ── -->
   <url>
     <loc>https://precisionairtz.site/</loc>
-    <lastmod>2026-05-20</lastmod>
-    <changefreq>daily</changefreq>
     <priority>1.0</priority>
-  </url>
-
-  <url>
-    <loc>https://precisionairtz.site/</loc>
-    <lastmod>2026-05-20</lastmod>
     <changefreq>daily</changefreq>
-    <priority>0.95</priority>
   </url>
-
   <url>
-    <loc>https://precisionairtz.site/destinations/</loc>
-    <lastmod>2026-05-20</lastmod>
-    <changefreq>weekly</changefreq>
+    <loc>https://precisionairtz.site/book</loc>
     <priority>0.9</priority>
+    <changefreq>daily</changefreq>
   </url>
-
   <url>
-    <loc>https://precisionairtz.site/fares/</loc>
-    <lastmod>2026-05-20</lastmod>
-    <changefreq>weekly</changefreq>
+    <loc>https://precisionairtz.site/destinations</loc>
     <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://precisionairtz.site/fleet/</loc>
-    <lastmod>2026-05-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-
-  <url>
-    <loc>https://precisionairtz.site/about/</loc>
-    <lastmod>2026-05-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://precisionairtz.site/contact/</loc>
-    <lastmod>2026-05-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://precisionairtz.site/blog/</loc>
-    <lastmod>2026-05-20</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.65</priority>
   </url>
-
   <url>
-    <loc>https://precisionairtz.site/check-in/</loc>
-    <lastmod>2026-05-20</lastmod>
-    <changefreq>monthly</changefreq>
+    <loc>https://precisionairtz.site/manage-booking</loc>
     <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://precisionairtz.site/manage-booking/</loc>
-    <lastmod>2026-05-20</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
   </url>
-
   <url>
-    <loc>https://precisionairtz.site/ebari-lounge/</loc>
-    <lastmod>2026-05-20</lastmod>
+    <loc>https://precisionairtz.site/check-in</loc>
+    <priority>0.8</priority>
     <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://precisionairtz.site/baggage-policy</loc>
     <priority>0.6</priority>
-  </url>
-
-  <url>
-    <loc>https://precisionairtz.site/baggage/</loc>
-    <lastmod>2026-05-20</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://precisionairtz.site/royal-miles</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://precisionairtz.site/special-assistance</loc>
+    <priority>0.5</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://precisionairtz.site/flight-status</loc>
+    <priority>0.8</priority>
+    <changefreq>daily</changefreq>
   </url>
 
+  <!-- ── COMPANY ── -->
   <url>
-    <loc>https://precisionairtz.site/privacy-policy/</loc>
-    <lastmod>2026-05-20</lastmod>
-    <changefreq>yearly</changefreq>
+    <loc>https://precisionairtz.site/about</loc>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://precisionairtz.site/news</loc>
+    <priority>0.6</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://precisionairtz.site/careers</loc>
+    <priority>0.5</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://precisionairtz.site/investor-relations</loc>
+    <priority>0.5</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://precisionairtz.site/partner-airlines</loc>
+    <priority>0.4</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://precisionairtz.site/contact</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://precisionairtz.site/terms</loc>
     <priority>0.3</priority>
-  </url>
-
-  <url>
-    <loc>https://precisionairtz.site/terms-and-conditions/</loc>
-    <lastmod>2026-05-20</lastmod>
     <changefreq>yearly</changefreq>
+  </url>
+  <url>
+    <loc>https://precisionairtz.site/privacy</loc>
     <priority>0.3</priority>
+    <changefreq>yearly</changefreq>
   </url>
 
-  <!-- ── DOMESTIC DESTINATION PAGES ── -->
-
+  <!-- ── DOMESTIC ROUTES ── -->
   <url>
-    <loc>https://precisionairtz.site/destinations/mombasa/</loc>
-    <lastmod>2026-05-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-    <image:image>
-      <image:loc>https://images.unsplash.com/photo-1546182990-dffeafbe841d?w=1200</image:loc>
-      <image:title>Mombasa — Skyward Airlines</image:title>
-    </image:image>
-  </url>
-
-  <url>
-    <loc>https://precisionairtz.site/destinations/ukunda-diani/</loc>
-    <lastmod>2026-05-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-    <image:image>
-      <image:loc>https://images.unsplash.com/photo-1575783970733-1aaedde1db74?w=1200</image:loc>
-      <image:title>Ukunda / Diani Beach — Skyward Airlines</image:title>
-    </image:image>
-  </url>
-
-  <url>
-    <loc>https://precisionairtz.site/destinations/malindi/</loc>
-    <lastmod>2026-05-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.82</priority>
-    <image:image>
-      <image:loc>https://images.unsplash.com/photo-1474511320723-9a56873867b5?w=1200</image:loc>
-      <image:title>Malindi — Skyward Airlines</image:title>
-    </image:image>
-  </url>
-
-  <url>
-    <loc>https://precisionairtz.site/destinations/eldoret/</loc>
-    <lastmod>2026-05-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.82</priority>
-  </url>
-
-  <url>
-    <loc>https://precisionairtz.site/destinations/lamu/</loc>
-    <lastmod>2026-05-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.83</priority>
-    <image:image>
-      <image:loc>https://images.unsplash.com/photo-1564760055775-d63b17a55c44?w=1200</image:loc>
-      <image:title>Lamu Island — Skyward Airlines</image:title>
-    </image:image>
-  </url>
-
-  <url>
-    <loc>https://precisionairtz.site/destinations/lodwar/</loc>
-    <lastmod>2026-05-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.78</priority>
-  </url>
-
-  <url>
-    <loc>https://precisionairtz.site/destinations/vipingo-ridge/</loc>
-    <lastmod>2026-05-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.78</priority>
-  </url>
-
-  <url>
-    <loc>https://precisionairtz.site/destinations/mandera/</loc>
-    <lastmod>2026-05-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.75</priority>
-  </url>
-
-  <url>
-    <loc>https://precisionairtz.site/destinations/kakuma/</loc>
-    <lastmod>2026-05-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.75</priority>
-  </url>
-
-  <url>
-    <loc>https://precisionairtz.site/destinations/migori/</loc>
-    <lastmod>2026-05-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.75</priority>
-  </url>
-
-  <url>
-    <loc>https://precisionairtz.site/destinations/kitale/</loc>
-    <lastmod>2026-05-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.75</priority>
-  </url>
-
-  <!-- ── INTERNATIONAL DESTINATION PAGES ── -->
-
-  <url>
-    <loc>https://precisionairtz.site/destinations/dar-es-salaam/</loc>
-    <lastmod>2026-05-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.88</priority>
-    <image:image>
-      <image:loc>https://images.unsplash.com/photo-1585468274952-66591eb14165?w=1200</image:loc>
-      <image:title>Dar es Salaam, Tanzania — Skyward Airlines</image:title>
-    </image:image>
-  </url>
-
-  <!-- ── FLEET PAGES ── -->
-
-  <url>
-    <loc>https://precisionairtz.site/fleet/fokker-50/</loc>
-    <lastmod>2026-05-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <url>
-    <loc>https://precisionairtz.site/fleet/bombardier-dash-8/</loc>
-    <lastmod>2026-05-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <!-- ── ROUTE-SPECIFIC BOOKING PAGES ── -->
-
-  <url>
-    <loc>https://precisionairtz.site/book/nairobi-mombasa/</loc>
-    <lastmod>2026-05-20</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.92</priority>
-  </url>
-
-  <url>
-    <loc>https://precisionairtz.site/book/nairobi-lamu/</loc>
-    <lastmod>2026-05-20</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.88</priority>
-  </url>
-
-  <url>
-    <loc>https://precisionairtz.site/book/nairobi-malindi/</loc>
-    <lastmod>2026-05-20</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.87</priority>
-  </url>
-
-  <url>
-    <loc>https://precisionairtz.site/book/nairobi-eldoret/</loc>
-    <lastmod>2026-05-20</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.86</priority>
-  </url>
-
-  <url>
-    <loc>https://precisionairtz.site/book/nairobi-dar-es-salaam/</loc>
-    <lastmod>2026-05-20</lastmod>
-    <changefreq>daily</changefreq>
+    <loc>https://precisionairtz.site/flights/DAR-ZNZ</loc>
     <priority>0.9</priority>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
+    <loc>https://precisionairtz.site/flights/ZNZ-DAR</loc>
+    <priority>0.9</priority>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
+    <loc>https://precisionairtz.site/flights/DAR-JRO</loc>
+    <priority>0.9</priority>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
+    <loc>https://precisionairtz.site/flights/JRO-DAR</loc>
+    <priority>0.9</priority>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
+    <loc>https://precisionairtz.site/flights/DAR-ARK</loc>
+    <priority>0.8</priority>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
+    <loc>https://precisionairtz.site/flights/DAR-MWZ</loc>
+    <priority>0.8</priority>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
+    <loc>https://precisionairtz.site/flights/MWZ-DAR</loc>
+    <priority>0.8</priority>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
+    <loc>https://precisionairtz.site/flights/DAR-MYW</loc>
+    <priority>0.7</priority>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
+    <loc>https://precisionairtz.site/flights/DAR-DOD</loc>
+    <priority>0.7</priority>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
+    <loc>https://precisionairtz.site/flights/DAR-BKZ</loc>
+    <priority>0.7</priority>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
+    <loc>https://precisionairtz.site/flights/ZNZ-JRO</loc>
+    <priority>0.8</priority>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
+    <loc>https://precisionairtz.site/flights/JRO-ZNZ</loc>
+    <priority>0.8</priority>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
+    <loc>https://precisionairtz.site/flights/MWZ-ARK</loc>
+    <priority>0.7</priority>
+    <changefreq>daily</changefreq>
   </url>
 
+  <!-- ── INTERNATIONAL ROUTES ── -->
   <url>
-    <loc>https://precisionairtz.site/book/nairobi-lodwar/</loc>
-    <lastmod>2026-05-20</lastmod>
+    <loc>https://precisionairtz.site/flights/DAR-NBO</loc>
+    <priority>0.9</priority>
     <changefreq>daily</changefreq>
-    <priority>0.82</priority>
+  </url>
+  <url>
+    <loc>https://precisionairtz.site/flights/NBO-DAR</loc>
+    <priority>0.9</priority>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
+    <loc>https://precisionairtz.site/flights/DAR-EBB</loc>
+    <priority>0.8</priority>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
+    <loc>https://precisionairtz.site/flights/ZNZ-NBO</loc>
+    <priority>0.8</priority>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
+    <loc>https://precisionairtz.site/flights/ARK-NBO</loc>
+    <priority>0.8</priority>
+    <changefreq>daily</changefreq>
+  </url>
+
+  <!-- ── DESTINATION PAGES ── -->
+  <url>
+    <loc>https://precisionairtz.site/destinations/dar-es-salaam</loc>
+    <priority>0.8</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://precisionairtz.site/destinations/zanzibar</loc>
+    <priority>0.8</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://precisionairtz.site/destinations/kilimanjaro</loc>
+    <priority>0.8</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://precisionairtz.site/destinations/arusha</loc>
+    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://precisionairtz.site/destinations/mwanza</loc>
+    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://precisionairtz.site/destinations/mtwara</loc>
+    <priority>0.6</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://precisionairtz.site/destinations/dodoma</loc>
+    <priority>0.6</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://precisionairtz.site/destinations/bukoba</loc>
+    <priority>0.6</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://precisionairtz.site/destinations/nairobi</loc>
+    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://precisionairtz.site/destinations/entebbe</loc>
+    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
   </url>
 
 </urlset>
