@@ -1,9 +1,19 @@
-# robots.txt — Precision Air
-# https://precisionairtez.site/robots.txt
+# robots.txt — Precision Air Tanzania
+# https://precisionairtz.site/robots.txt
 
 User-agent: *
 Allow: /
-Allow: /flights/
-Allow: /destinations/
 
-Sitemap: https://precisionairtez.site/sitemap.xml
+# Block private/system paths
+Disallow: /admin/
+Disallow: /api/
+Disallow: /booking/payment/
+Disallow: /booking/processing/
+Disallow: /booking/confirmation/
+Disallow: /cgi-bin/
+Disallow: /tmp/
+Disallow: /private/
+Disallow: /*.json$
+
+# Sitemap
+Sitemap: https://precisionairtz.site/sitemap.xml
