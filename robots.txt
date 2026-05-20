@@ -1,6 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://www.precisionairtz.site/sitemap.xml
-
-Host: www.precisionairtz.site
