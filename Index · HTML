@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <title>Precision Air — Tanzania's Leading Airline</title>
 <meta name="description" content="Book direct flights with Precision Air across Tanzania and East Africa. Fly to Zanzibar, Kilimanjaro, Nairobi, Mwanza and more. Economy & Business Class from USD 89."/>
-<link rel="canonical" href="https://precisionairtez.site/"/>
+<link rel="canonical" href="https://precisionairtz.site/"/>
 <link rel="sitemap" type="application/xml" href="/sitemap.xml"/>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet"/>
 <style>
@@ -599,6 +599,33 @@ img{background:var(--navy2,#1a2e45)}
     <!-- ── STEP 1: Flight & Class ── -->
     <div class="m-body">
       <div class="step-section show" id="step1">
+
+        <!-- Trip Type + Passengers row -->
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:.9rem;margin-bottom:1rem">
+          <div>
+            <div style="font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--mid);margin-bottom:.5rem">Trip Type</div>
+            <div style="display:flex;background:var(--gray);border-radius:8px;padding:.28rem;gap:.3rem">
+              <button id="mOwBtn" onclick="setModalTrip('ow')" style="flex:1;padding:.45rem;border:none;background:#fff;border-radius:6px;font-size:.8rem;font-weight:700;color:var(--navy);box-shadow:0 2px 8px rgba(0,0,0,.08);cursor:pointer;transition:.2s">One Way</button>
+              <button id="mRtBtn" onclick="setModalTrip('rt')" style="flex:1;padding:.45rem;border:none;background:transparent;border-radius:6px;font-size:.8rem;font-weight:600;color:var(--mid);cursor:pointer;transition:.2s">Round Trip</button>
+            </div>
+          </div>
+          <div>
+            <div style="font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--mid);margin-bottom:.5rem">Passengers</div>
+            <div style="display:flex;align-items:center;gap:.6rem;background:var(--gray);border-radius:8px;padding:.5rem .9rem">
+              <button onclick="changeModalPax(-1)" style="width:28px;height:28px;border-radius:50%;border:1.5px solid var(--border);background:#fff;font-size:1rem;cursor:pointer;flex-shrink:0;transition:.15s">−</button>
+              <span id="mPaxDisplay" style="flex:1;text-align:center;font-weight:800;font-size:1rem;color:var(--navy)">1</span>
+              <button onclick="changeModalPax(1)" style="width:28px;height:28px;border-radius:50%;border:1.5px solid var(--border);background:#fff;font-size:1rem;cursor:pointer;flex-shrink:0;transition:.15s">+</button>
+              <span style="font-size:.78rem;color:var(--mid)">Adult(s)</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Departure / Return dates -->
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:.9rem;margin-bottom:1.1rem">
+          <div class="fg"><label>Departure Date</label><input type="date" id="mDep"/></div>
+          <div class="fg" id="mRetWrap" style="display:none"><label>Return Date</label><input type="date" id="mRet"/></div>
+        </div>
+
         <div class="flight-summary" id="mFlightSummary"></div>
         <div style="margin-bottom:1rem">
           <div style="font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--mid);margin-bottom:.8rem">Select Fare Class</div>
@@ -833,7 +860,7 @@ function addDur(time, dur){
 // ─── RENDER ROUTE CARDS ───
 function renderRoutes(){
   const grid = document.getElementById('routesGrid');
-  grid.innerHTML = ROUTES.map(r => `
+  grid.innerHTML = ROUTES.map((r,i) => `
     <div class="route-card">
       <div class="rc-img">
         <img src="${r.img}" alt="${r.toName}" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=700&q=85&auto=format&fit=crop'" loading="lazy"/>
@@ -853,7 +880,7 @@ function renderRoutes(){
             <div class="rc-usd">${fmt(r.eco)}</div>
             <div class="rc-tzs">${fmtTZS(r.eco)}</div>
           </div>
-          <a href="/flights/${r.code}.html" class="btn-book-rc" style="display:inline-block;text-align:center">Book Now →</a>
+          <button class="btn-book-rc" onclick='openModal(ROUTES[${i}])'>Book Now →</button>
         </div>
       </div>
     </div>`).join('');
@@ -906,7 +933,7 @@ function toggleSeat(el, id){
     el.classList.remove('sel');
     selectedSeats = selectedSeats.filter(s => s!==id);
   } else {
-    if(selectedSeats.length >= paxCount){ showToast(`Select exactly ${paxCount} seat(s).`); return; }
+    if(selectedSeats.length >= modalPaxCount){ showToast(`Select exactly ${modalPaxCount} seat(s).`); return; }
     el.classList.add('sel');
     selectedSeats.push(id);
   }
@@ -914,7 +941,7 @@ function toggleSeat(el, id){
 }
 
 function updateSeatNote(){
-  document.getElementById('seatsNeeded').textContent = paxCount;
+  document.getElementById('seatsNeeded').textContent = modalPaxCount;
   document.getElementById('seatsSelected').textContent = selectedSeats.length;
 }
 
@@ -922,7 +949,7 @@ function updateSeatNote(){
 function buildPassengerForms(){
   const wrap = document.getElementById('passengerForms');
   wrap.innerHTML = '';
-  for(let i=0; i<paxCount; i++){
+  for(let i=0; i<modalPaxCount; i++){
     wrap.insertAdjacentHTML('beforeend',`
       <div class="pax-section">
         <div class="pax-title"><span class="pax-num">${i+1}</span>Passenger ${i+1}${i===0?' (Lead)':''}</div>
@@ -945,16 +972,16 @@ function buildPassengerForms(){
   }
 }
 
-// ─── REVIEW ───
 function buildReview(){
-  const ecoPrice = currentRoute.eco * paxCount;
-  const bizPrice = currentRoute.biz * paxCount;
+  const rt = modalTripType === 'rt';
+  const ecoPrice = currentRoute.eco * modalPaxCount * (rt?2:1);
+  const bizPrice = currentRoute.biz * modalPaxCount * (rt?2:1);
   const price = selectedClass === 'eco' ? ecoPrice : bizPrice;
   const cls = selectedClass === 'eco' ? 'Economy' : 'Business';
 
   // collect passenger names
   const paxLines = [];
-  for(let i=0;i<paxCount;i++){
+  for(let i=0;i<modalPaxCount;i++){
     const t = document.getElementById(`p${i}title`)?.value||'';
     const fn = document.getElementById(`p${i}fn`)?.value||'';
     const ln = document.getElementById(`p${i}ln`)?.value||'';
@@ -962,18 +989,83 @@ function buildReview(){
   }
   const phone = document.getElementById('paxPhone')?.value||'';
   const email = document.getElementById('paxEmail')?.value||'';
+  const dep   = document.getElementById('mDep')?.value||document.getElementById('sDep')?.value||'';
+  const ret   = document.getElementById('mRet')?.value||'';
+
+  function fmtDate(d){
+    if(!d) return 'To be confirmed';
+    const dt = new Date(d+'T00:00:00');
+    return dt.toLocaleDateString('en-GB',{weekday:'short',day:'2-digit',month:'short',year:'numeric'});
+  }
 
   document.getElementById('reviewBlock').innerHTML = `
     <div class="rb-title">Booking Summary</div>
     <div class="rb-row"><span>Route</span><span class="val">${currentRoute.fromName} (${currentRoute.from}) → ${currentRoute.toName} (${currentRoute.to})</span></div>
-    <div class="rb-row"><span>Type</span><span class="val">${tripType==='rt'?'Round Trip':'One Way'} · ${currentRoute.type}</span></div>
+    <div class="rb-row"><span>Trip Type</span><span class="val">${rt?'Round Trip ⇄':'One Way →'} · ${currentRoute.type}</span></div>
+    <div class="rb-row"><span>Departure</span><span class="val">${fmtDate(dep)}</span></div>
+    ${rt?`<div class="rb-row"><span>Return</span><span class="val">${fmtDate(ret)}</span></div>`:''}
     <div class="rb-row"><span>Duration</span><span class="val">${currentRoute.duration}</span></div>
     <div class="rb-row"><span>Fare Class</span><span class="val">${cls}</span></div>
     <div class="rb-row"><span>Seats</span><span class="val">${selectedSeats.join(', ')||'Not selected'}</span></div>
-    <div class="rb-row"><span>Passengers</span><span class="val">${paxLines.join(' | ')||paxCount+' passenger(s)'}</span></div>
+    <div class="rb-row"><span>Passengers</span><span class="val">${paxLines.join(' | ')||modalPaxCount+' passenger(s)'}</span></div>
     <div class="rb-row"><span>Contact</span><span class="val">${phone||'—'}</span></div>
     ${email?`<div class="rb-row"><span>Email</span><span class="val">${email}</span></div>`:''}
-    <div class="rb-row total"><span>Total Fare (${paxCount} pax)</span><span class="val">${fmt(price)}<br/><small style="font-weight:400;font-size:.72rem">${fmtTZS(price)}</small></span></div>`;
+    <div class="rb-row total"><span>Total Fare (${modalPaxCount} pax${rt?' · RT':''})</span><span class="val">${fmt(price)}<br/><small style="font-weight:400;font-size:.72rem">${fmtTZS(price)}</small></span></div>`;
+}
+
+// ─── MODAL-LOCAL TRIP / PAX ───
+let modalTripType = 'ow';
+let modalPaxCount = 1;
+
+function setModalTrip(t){
+  modalTripType = t;
+  const owBtn = document.getElementById('mOwBtn');
+  const rtBtn = document.getElementById('mRtBtn');
+  if(t==='ow'){
+    owBtn.style.background='#fff'; owBtn.style.color='var(--navy)'; owBtn.style.fontWeight='700'; owBtn.style.boxShadow='0 2px 8px rgba(0,0,0,.08)';
+    rtBtn.style.background='transparent'; rtBtn.style.color='var(--mid)'; rtBtn.style.fontWeight='600'; rtBtn.style.boxShadow='none';
+    document.getElementById('mRetWrap').style.display='none';
+  } else {
+    rtBtn.style.background='#fff'; rtBtn.style.color='var(--navy)'; rtBtn.style.fontWeight='700'; rtBtn.style.boxShadow='0 2px 8px rgba(0,0,0,.08)';
+    owBtn.style.background='transparent'; owBtn.style.color='var(--mid)'; owBtn.style.fontWeight='600'; owBtn.style.boxShadow='none';
+    document.getElementById('mRetWrap').style.display='flex';
+    document.getElementById('mRetWrap').style.flexDirection='column';
+    document.getElementById('mRetWrap').style.gap='.28rem';
+  }
+  refreshClassCards();
+}
+
+function changeModalPax(d){
+  modalPaxCount = Math.max(1, Math.min(9, modalPaxCount + d));
+  document.getElementById('mPaxDisplay').textContent = modalPaxCount;
+  document.getElementById('mSub').textContent = `${currentRoute.type} · ${currentRoute.duration} · ${modalPaxCount} passenger(s)`;
+  refreshClassCards();
+}
+
+function refreshClassCards(){
+  if(!currentRoute) return;
+  const rt = modalTripType==='rt';
+  const ecoTotal = currentRoute.eco * modalPaxCount * (rt?2:1);
+  const bizTotal = currentRoute.biz * modalPaxCount * (rt?2:1);
+  const rtTag = rt?'<span style="font-size:.68rem;background:rgba(192,57,43,.12);color:var(--red);padding:.15rem .4rem;border-radius:4px;margin-left:.4rem">×2 RT</span>':'';
+  document.getElementById('classCards').innerHTML = `
+    <label style="border:2px solid var(--red);background:#fff7f6;border-radius:10px;padding:1.2rem;cursor:pointer;position:relative" id="ecoCard">
+      <input type="radio" name="fareClass" value="eco" checked style="display:none" onchange="setClass('eco')"/>
+      <div style="font-size:.68rem;font-weight:800;letter-spacing:.1em;color:var(--mid);text-transform:uppercase;margin-bottom:.3rem">Economy${rtTag}</div>
+      <div style="font-family:var(--serif);font-size:1.6rem;font-weight:800;color:var(--red);line-height:1">${fmt(ecoTotal)}</div>
+      <div style="font-size:.72rem;color:var(--mid);margin-top:.1rem">${fmtTZS(ecoTotal)} · ${modalPaxCount} pax</div>
+      <div style="font-size:.72rem;color:#555;margin-top:.5rem">23kg baggage · 7kg cabin · Meals on select routes</div>
+      <div style="position:absolute;top:10px;right:10px;background:var(--red);color:#fff;border-radius:50%;width:20px;height:20px;display:flex;align-items:center;justify-content:center;font-size:.75rem" id="ecoCheck">✓</div>
+    </label>
+    <label style="border:2px solid var(--border);background:#fff;border-radius:10px;padding:1.2rem;cursor:pointer;position:relative" id="bizCard">
+      <input type="radio" name="fareClass" value="biz" style="display:none" onchange="setClass('biz')"/>
+      <div style="font-size:.68rem;font-weight:800;letter-spacing:.1em;color:var(--gold);text-transform:uppercase;margin-bottom:.3rem">Business${rtTag}</div>
+      <div style="font-family:var(--serif);font-size:1.6rem;font-weight:800;color:var(--navy);line-height:1">${fmt(bizTotal)}</div>
+      <div style="font-size:.72rem;color:var(--mid);margin-top:.1rem">${fmtTZS(bizTotal)} · ${modalPaxCount} pax</div>
+      <div style="font-size:.72rem;color:#555;margin-top:.5rem">Priority boarding · Extra legroom · Premium meals</div>
+      <div style="position:absolute;top:10px;right:10px;background:var(--border);color:transparent;border-radius:50%;width:20px;height:20px;display:flex;align-items:center;justify-content:center;font-size:.75rem" id="bizCheck">✓</div>
+    </label>`;
+  selectedClass = 'eco';
 }
 
 // ─── OPEN MODAL ───
@@ -983,45 +1075,38 @@ function openModal(route){
   currentStep = 1;
   selectedSeats = [];
   selectedClass = 'eco';
+  modalTripType = 'ow';
+  modalPaxCount = 1;
+
+  // Init date inputs
+  const todayStr = new Date().toISOString().split('T')[0];
+  const mDep = document.getElementById('mDep');
+  const mRet = document.getElementById('mRet');
+  if(mDep){ mDep.min = todayStr; mDep.value = todayStr; }
+  if(mRet){ mRet.min = todayStr; mRet.value = ''; }
+
+  // Reset modal-local UI
+  setModalTrip('ow');
+  document.getElementById('mPaxDisplay').textContent = '1';
 
   // Flight summary
-  const ecoTotal = currentRoute.eco * paxCount;
-  const bizTotal = currentRoute.biz * paxCount;
   document.getElementById('mFlightSummary').innerHTML = `
     <div class="fs-route">
       <div class="fs-city">${currentRoute.fromName} <span style="font-size:.72rem;color:var(--mid)">(${currentRoute.from})</span></div>
       <div class="fs-arrow">→</div>
       <div class="fs-city">${currentRoute.toName} <span style="font-size:.72rem;color:var(--mid)">(${currentRoute.to})</span></div>
-      ${tripType==='rt'?'<div style="font-size:.72rem;background:var(--red);color:#fff;padding:.18rem .55rem;border-radius:20px;font-weight:700">Return</div>':''}
     </div>
     <div class="fs-details">
       <div class="fs-item"><label>Type</label><span>${currentRoute.type}</span></div>
       <div class="fs-item"><label>Duration</label><span>${currentRoute.duration}</span></div>
-      <div class="fs-item"><label>Passengers</label><span>${paxCount}</span></div>
       <div class="fs-item"><label>Daily Flights</label><span>${currentRoute.dep.length} times</span></div>
+      <div class="fs-item"><label>Direct</label><span>Yes ✓</span></div>
     </div>`;
 
-  // Class cards
-  document.getElementById('classCards').innerHTML = `
-    <label style="border:2px solid var(--red);background:#fff7f6;border-radius:10px;padding:1.2rem;cursor:pointer;position:relative" id="ecoCard">
-      <input type="radio" name="fareClass" value="eco" checked style="display:none" onchange="setClass('eco')"/>
-      <div style="font-size:.68rem;font-weight:800;letter-spacing:.1em;color:var(--mid);text-transform:uppercase;margin-bottom:.3rem">Economy</div>
-      <div style="font-family:var(--serif);font-size:1.6rem;font-weight:800;color:var(--red);line-height:1">${fmt(ecoTotal)}</div>
-      <div style="font-size:.72rem;color:var(--mid);margin-top:.1rem">${fmtTZS(ecoTotal)} · ${paxCount} pax</div>
-      <div style="font-size:.72rem;color:#555;margin-top:.5rem">23kg baggage · 7kg cabin · Meals on select routes</div>
-      <div style="position:absolute;top:10px;right:10px;background:var(--red);color:#fff;border-radius:50%;width:20px;height:20px;display:flex;align-items:center;justify-content:center;font-size:.75rem" id="ecoCheck">✓</div>
-    </label>
-    <label style="border:2px solid var(--border);background:#fff;border-radius:10px;padding:1.2rem;cursor:pointer;position:relative" id="bizCard">
-      <input type="radio" name="fareClass" value="biz" style="display:none" onchange="setClass('biz')"/>
-      <div style="font-size:.68rem;font-weight:800;letter-spacing:.1em;color:var(--gold);text-transform:uppercase;margin-bottom:.3rem">Business</div>
-      <div style="font-family:var(--serif);font-size:1.6rem;font-weight:800;color:var(--navy);line-height:1">${fmt(bizTotal)}</div>
-      <div style="font-size:.72rem;color:var(--mid);margin-top:.1rem">${fmtTZS(bizTotal)} · ${paxCount} pax</div>
-      <div style="font-size:.72rem;color:#555;margin-top:.5rem">Priority boarding · Extra legroom · Premium meals</div>
-      <div style="position:absolute;top:10px;right:10px;background:var(--border);color:transparent;border-radius:50%;width:20px;height:20px;display:flex;align-items:center;justify-content:center;font-size:.75rem" id="bizCheck">✓</div>
-    </label>`;
+  refreshClassCards();
 
   document.getElementById('mTitle').textContent = `Book: ${currentRoute.fromName} → ${currentRoute.toName}`;
-  document.getElementById('mSub').textContent = `${currentRoute.type} · ${currentRoute.duration} · ${paxCount} passenger(s)`;
+  document.getElementById('mSub').textContent = `${currentRoute.type} · ${currentRoute.duration} · 1 passenger(s)`;
   gotoStep(1);
   document.getElementById('modalBg').classList.add('open');
   document.body.style.overflow = 'hidden';
@@ -1066,17 +1151,17 @@ function gotoStep(n){
   document.getElementById('nextBtn').textContent = n===4?'Confirm':'Continue →';
   document.getElementById('nextBtn').onclick = n===4 ? confirmBooking : nextStep;
 
-  if(n===2){ buildSeatMap(); document.getElementById('seatsNeeded').textContent=paxCount; }
+  if(n===2){ buildSeatMap(); document.getElementById('seatsNeeded').textContent=modalPaxCount; }
   if(n===3) buildPassengerForms();
   if(n===4) buildReview();
 }
 
 function nextStep(){
-  if(currentStep===2 && selectedSeats.length < paxCount){
-    showToast(`Please select ${paxCount} seat(s). You have ${selectedSeats.length}.`); return;
+  if(currentStep===2 && selectedSeats.length < modalPaxCount){
+    showToast(`Please select ${modalPaxCount} seat(s). You have ${selectedSeats.length}.`); return;
   }
   if(currentStep===3){
-    for(let i=0;i<paxCount;i++){
+    for(let i=0;i<modalPaxCount;i++){
       if(!document.getElementById(`p${i}fn`)?.value.trim()||!document.getElementById(`p${i}ln`)?.value.trim()){
         showToast(`Please enter full name for Passenger ${i+1}.`); return;
       }
@@ -1092,120 +1177,97 @@ function prevStep(){ if(currentStep > 1) gotoStep(currentStep-1); }
 
 // ─── CONFIRM BOOKING → WHATSAPP ───
 function confirmBooking(){
-  const pricePerPax = selectedClass==='eco' ? currentRoute.eco : currentRoute.biz;
-  const price = pricePerPax * paxCount;
-  const cls = selectedClass==='eco' ? 'Economy' : 'Business Class';
+  var pricePerPax = selectedClass==="eco" ? currentRoute.eco : currentRoute.biz;
+  var rt = modalTripType==="rt";
+  var totalUSD = pricePerPax * modalPaxCount * (rt ? 2 : 1);
+  var cls = selectedClass==="eco" ? "Economy" : "Business Class";
+  var SEP = "\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500";
 
-  // Collect passenger data
-  const paxData = [];
-  for(let i=0;i<paxCount;i++){
-    paxData.push({
-      title : document.getElementById(`p${i}title`)?.value||'Mr',
-      fn    : document.getElementById(`p${i}fn`)?.value||'',
-      ln    : document.getElementById(`p${i}ln`)?.value||'',
-      dob   : document.getElementById(`p${i}dob`)?.value||'',
-      pass  : document.getElementById(`p${i}pass`)?.value||'',
-      nat   : document.getElementById(`p${i}nat`)?.value||'',
-      exp   : document.getElementById(`p${i}exp`)?.value||''
-    });
+  var paxData = [];
+  for(var i=0;i<modalPaxCount;i++){
+    var el = function(id){ var e=document.getElementById(id); return e?e.value:""; };
+    paxData.push({title:el("p"+i+"title")||"Mr",fn:el("p"+i+"fn"),ln:el("p"+i+"ln"),dob:el("p"+i+"dob"),pass:el("p"+i+"pass"),nat:el("p"+i+"nat"),exp:el("p"+i+"exp")});
   }
-  const phone = document.getElementById('paxPhone')?.value||'';
-  const email = document.getElementById('paxEmail')?.value||'';
-  const dep   = document.getElementById('sDep')?.value||'';
-  const ret   = document.getElementById('sRet')?.value||'';
+  var phone = (document.getElementById("paxPhone")||{value:""}).value;
+  var email = (document.getElementById("paxEmail")||{value:""}).value;
+  var dep   = (document.getElementById("mDep")||document.getElementById("sDep")||{value:""}).value;
+  var ret   = (document.getElementById("mRet")||{value:""}).value;
 
-  // Format date nicely: 2026-05-08 -> Fri, 08 May 2026
   function fmtDate(d){
-    if(!d) return 'To be confirmed';
-    const dt = new Date(d+'T00:00:00');
-    return dt.toLocaleDateString('en-GB',{weekday:'short',day:'2-digit',month:'short',year:'numeric'});
+    if(!d) return "To be confirmed";
+    var dt = new Date(d+"T00:00:00");
+    return dt.toLocaleDateString("en-GB",{weekday:"short",day:"2-digit",month:"short",year:"numeric"});
   }
 
-  // Booking reference
-  const ref = 'PW-' + Math.random().toString(36).slice(2,8).toUpperCase();
-  const now = new Date().toLocaleString('en-GB',{day:'2-digit',month:'short',year:'numeric',hour:'2-digit',minute:'2-digit',hour12:false});
+  var ref = "PW-" + Math.random().toString(36).slice(2,8).toUpperCase();
+  var now = new Date().toLocaleString("en-GB",{day:"2-digit",month:"short",year:"numeric",hour:"2-digit",minute:"2-digit",hour12:false});
+  var lead = paxData[0];
+  var leadName = (lead.title+" "+lead.fn+" "+lead.ln).trim().toUpperCase();
 
-  // Lead passenger
-  const lead = paxData[0];
-  const leadName = `${lead.title} ${lead.fn} ${lead.ln}`.trim().toUpperCase();
-
-  // Seat list per passenger
-  const seatPerPax = selectedSeats.length
-    ? selectedSeats.join(', ')
-    : 'To be assigned';
-
-  // All passengers block
-  let allPaxBlock = '';
-  paxData.forEach((p,i)=>{
-    const name = `${p.title} ${p.fn} ${p.ln}`.trim().toUpperCase();
-    const seat = selectedSeats[i] || 'To be assigned';
+  var allPaxBlock = "";
+  paxData.forEach(function(p,i){
+    var name = (p.title+" "+p.fn+" "+p.ln).trim().toUpperCase();
+    var seat = selectedSeats[i] || "To be assigned";
     allPaxBlock +=
-      `  PAX ${i+1} — ${i===0?'Adult (LEAD)':'Adult'}\n` +
-      `  Name       : ${name}\n` +
-      (p.dob  ? `  DOB        : ${p.dob}\n` : '') +
-      (p.nat  ? `  Nationality: ${p.nat}\n` : '') +
-      (p.pass ? `  Passport   : ${p.pass}\n` : '') +
-      (p.exp  ? `  Expiry     : ${p.exp}\n` : '') +
-      `  ${tripType==='rt'?'Outbound ':''}Seat: ${seat}\n` +
-      (tripType==='rt'? `  Return Seat: To be assigned\n` : '') +
-      `─────────────────────────────\n`;
+      "  PAX "+(i+1)+" \u2014 "+(i===0?"Adult (LEAD)":"Adult")+"\n"+
+      "  Name       : "+name+"\n"+
+      (p.dob  ? "  DOB        : "+p.dob+"\n" : "")+
+      (p.nat  ? "  Nationality: "+p.nat+"\n" : "")+
+      (p.pass ? "  Passport   : "+p.pass+"\n" : "")+
+      (p.exp  ? "  Expiry     : "+p.exp+"\n" : "")+
+      "  "+(rt?"Outbound ":"")+"Seat: "+seat+"\n"+
+      (rt?"  Return Seat : To be assigned\n":"")+
+      SEP+"\n";
   });
 
-  // Fare breakdown
-  let fareBreakdown = `Adults (${paxCount}) : ${fmt(price)}\n`;
-  if(tripType==='rt') fareBreakdown += `Return fare included\n`;
+  var rtLabel = rt ? " x2 (Round Trip)" : "";
+  var ticketURL = "https://precisionairtz.site/ticket?ref="+ref;
 
-  const msg =
-    `✅ *PRECISION AIR BOOKING REQUEST*\n` +
-    `─────────────────────────────\n` +
-    `📋 *Booking Ref:* ${ref}\n` +
-    `🕐 *Time:* ${now}\n` +
-    `📞 *Contact No.:* ${phone||'—'}\n` +
-    `🏦 *Agent:* +254 103 761 442 (Precision Air)\n` +
-    `💵 *Total Fare:* ${fmt(price)} (${fmtTZS(price)})\n` +
-    `─────────────────────────────\n` +
-    `🛫 *FLIGHT DETAILS*\n` +
-    `─────────────────────────────\n` +
-    `Route     : ${currentRoute.fromName} (${currentRoute.from})  ✈  ${currentRoute.toName} (${currentRoute.to})\n` +
-    `Trip Type : ${tripType==='rt'?'Round Trip ⇄':'One Way →'}\n` +
-    `Departure : ${fmtDate(dep)}\n` +
-    (tripType==='rt'?`Return    : ${fmtDate(ret)}\n`:'') +
-    `Airline   : Precision Air (PW)\n` +
-    `Cabin     : ${cls}\n` +
-    `Duration  : ${currentRoute.duration}\n` +
-    `Baggage   : 23kg checked + 7kg cabin\n` +
-    `Seats     : ${seatPerPax}\n` +
-    `─────────────────────────────\n` +
-    `👤 *LEAD PASSENGER*\n` +
-    `─────────────────────────────\n` +
-    `Name        : ${leadName}\n` +
-    `WhatsApp    : ${phone||'—'}\n` +
-    `Email       : ${email||'—'}\n` +
-    `Nationality : ${lead.nat||'—'}\n` +
-    `Passport    : ${lead.pass||'—'}\n` +
-    (lead.exp?`Passport Expiry: ${lead.exp}\n`:'') +
-    `─────────────────────────────\n` +
-    `🧳 *ALL PASSENGERS (${paxCount} total)*\n` +
-    `─────────────────────────────\n` +
-    allPaxBlock +
-    `💰 *FARE BREAKDOWN*\n` +
-    `─────────────────────────────\n` +
-    fareBreakdown +
-    `*TOTAL : ${fmt(price)}*\n` +
-    `TZS equiv: ${fmtTZS(price)}\n` +
-    `─────────────────────────────\n` +
-    `🎫 *BOOKING CONFIRMATION*\n` +
-    `─────────────────────────────\n` +
-    `Ref: ${ref}\n` +
-    `Please confirm receipt and issue e-ticket.\n` +
-    `─────────────────────────────\n` +
-    `_Please confirm payment receipt and issue e-ticket. Thank you!_ 🙏`;
+  var msg =
+    "\u2705 *PRECISION AIR \u2014 BOOKING REQUEST*\n"+SEP+"\n"+
+    "📋 *Booking Ref:* "+ref+"\n"+
+    "🕐 *Time:* "+now+"\n"+
+    "📞 *Contact No.:* "+(phone||"\u2014")+"\n"+
+    "🏦 *Agent:* +254 103 761 442 (Precision Air TZ)\n"+
+    "💵 *Total Fare:* USD "+totalUSD+"\n"+
+    SEP+"\n"+
+    "\u2708 *FLIGHT DETAILS*\n"+SEP+"\n"+
+    "Route     : "+currentRoute.fromName+" ("+currentRoute.from+")  \u2708  "+currentRoute.toName+" ("+currentRoute.to+")\n"+
+    "Trip Type : "+(rt?"Round Trip \u21c4":"One Way \u2192")+"\n"+
+    "Departure : "+fmtDate(dep)+"\n"+
+    (rt?"Return    : "+fmtDate(ret)+"\n":"")+
+    "Airline   : Precision Air (PW)\n"+
+    "Cabin     : "+cls+"\n"+
+    "Duration  : "+currentRoute.duration+"\n"+
+    "Baggage   : 23kg checked + 7kg cabin\n"+
+    "Meal      : Standard meal\n"+
+    (rt?"Outbound Seat(s): ":(selectedSeats.length?"Seat(s)   : ":"Seat(s)   : "))+(selectedSeats.join(", ")||"To be assigned")+"\n"+
+    SEP+"\n"+
+    "👤 *LEAD PASSENGER*\n"+SEP+"\n"+
+    "Name        : "+leadName+"\n"+
+    "WhatsApp    : "+(phone||"\u2014")+"\n"+
+    "Email       : "+(email||"\u2014")+"\n"+
+    "Nationality : "+(lead.nat||"\u2014")+"\n"+
+    "Passport    : "+(lead.pass||"\u2014")+"\n"+
+    (lead.exp?"Passport Expiry: "+lead.exp+"\n":"")+
+    SEP+"\n"+
+    "🧳 *ALL PASSENGERS ("+modalPaxCount+" total)*\n"+SEP+"\n"+
+    allPaxBlock+
+    "💰 *FARE BREAKDOWN*\n"+SEP+"\n"+
+    "Adults ("+modalPaxCount+") : USD "+pricePerPax+" x "+modalPaxCount+rtLabel+"\n"+
+    "*TOTAL : USD "+totalUSD+"*\n"+
+    "TZS Equiv : TZS "+(totalUSD*TZS_RATE).toLocaleString()+"\n"+
+    SEP+"\n"+
+    "🎫 *BOARDING PASS / TICKET*\n"+SEP+"\n"+
+    "Booking Ref: "+ref+"\n"+
+    "Booking portal: "+ticketURL+"\n"+
+    SEP+"\n"+
+    "_Please confirm payment receipt and issue e-ticket. Thank you!_ 🙏";
 
-  window.open(`https://wa.me/${WA}?text=${encodeURIComponent(msg)}`, '_blank');
-  showToast('Opening WhatsApp — your booking is being sent!');
+  window.open("https://wa.me/254103761442?text="+encodeURIComponent(msg),"_blank");
+  showToast("Opening WhatsApp \u2014 booking sent!");
   closeModal();
 }
-
 // ─── TOAST ───
 function showToast(m){
   const t = document.getElementById('toast');
