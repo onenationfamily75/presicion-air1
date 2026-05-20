@@ -1,7 +1,15 @@
+# robots.txt for https://precisionairtz.site/
+# Generated: 2026-05-20
+
+# Allow all search engine crawlers
 User-agent: *
 Allow: /
 
-allow: /admin/
-allow: /private/
+# Block access to any admin or private folders (adjust as needed)
+Disallow: /admin/
+Disallow: /cgi-bin/
+Disallow: /private/
+Disallow: /tmp/
 
+# Sitemap location
 Sitemap: https://precisionairtz.site/sitemap.xml
