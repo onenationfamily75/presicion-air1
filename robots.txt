@@ -3,9 +3,9 @@
 # Precision Air | Tanzania's Leading Airline
 # ──────────────────────────────────────────────
 
-# Allow all compliant crawlers
 User-agent: *
 Allow: /
+Allow: /sitemap.xml
 
 # Block internal / non-public paths
 Disallow: /admin/
@@ -17,18 +17,11 @@ Disallow: /checkin/
 Disallow: /account/
 Disallow: /payment/
 Disallow: /cgi-bin/
-Disallow: /*.json$
-Disallow: /*.xml$
-
-# Allow sitemap explicitly (overrides *.xml rule above for crawlers that respect order)
-Allow: /sitemap.xml
-
-# Crawl-delay for polite crawlers (seconds)
-Crawl-delay: 5
 
 # ── Google ──
 User-agent: Googlebot
 Allow: /
+Allow: /sitemap.xml
 Disallow: /admin/
 Disallow: /api/
 Disallow: /booking/confirmation/
@@ -42,6 +35,7 @@ Crawl-delay: 2
 # ── Bing ──
 User-agent: Bingbot
 Allow: /
+Allow: /sitemap.xml
 Disallow: /admin/
 Disallow: /api/
 Disallow: /ticket/
@@ -69,7 +63,7 @@ Disallow: /
 User-agent: PerplexityBot
 Disallow: /
 
-# ── Block bad bots ──
+# ── Block noisy SEO scrapers ──
 User-agent: AhrefsBot
 Disallow: /
 
@@ -82,5 +76,6 @@ Disallow: /
 User-agent: SemrushBot
 Disallow: /
 
-# ── Sitemap location ──
+# ── Sitemap ──
 Sitemap: https://precisionairtz.site/sitemap.xml
+
