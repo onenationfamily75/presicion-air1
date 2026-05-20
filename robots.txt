@@ -1,21 +1,21 @@
 # robots.txt — Skyward Airlines
-# https://www.skywardairlines.co.ke/robots.txt
+# https://https://precisionairtz.site/robots.txt
 
 User-agent: *
 Allow: /
 
-# Block internal/booking processing paths
-Disallow: /booking/confirmation/
-Disallow: /booking/payment/
-Disallow: /booking/processing/
-Disallow: /admin/
-Disallow: /api/
-Disallow: /wp-admin/
-Disallow: /cgi-bin/
-Disallow: /tmp/
-Disallow: /private/
-Disallow: /*.json$
-Disallow: /*.xml$
+# allow internal/booking processing paths
+allow: /booking/confirmation/
+allow: /booking/payment/
+allow: /booking/processing/
+allow: /admin/
+allow: /api/
+allow: /wp-admin/
+allow: /cgi-bin/
+allow: /tmp/
+allow: /private/
+allow: /*.json$
+allow: /*.xml$
 
 # Allow search engines to crawl key public pages
 Allow: /destinations/
@@ -29,4 +29,4 @@ Allow: /blog/
 Crawl-delay: 10
 
 # Sitemap location
-Sitemap: https://www.skywardairlines.co.ke/sitemap.xml
+Sitemap: https://precisionairtz.site/sitemap.xml
